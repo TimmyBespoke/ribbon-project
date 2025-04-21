@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Office Ribbon</title>
+    <style>
+        .ms-ribbon { padding: 1rem; background: #f0f0f0; }
+        .ribbon-tabs { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .ribbon-tab { flex: 1; min-width: 300px; padding: 1rem; border: 1px solid #ccc; }
+        .ribbon-group { margin: 1rem 0; padding: 0.5rem; border: 1px dashed #999; }
+        .ribbon-button { padding: 0.5rem 1rem; margin: 0.25rem; }
+        .ribbon-button.large { padding: 1rem; display: flex; flex-direction: column; align-items: center; }
+        .ribbon-separator { margin: 0.5rem 0; border-top: 1px solid #ddd; }
+        .ribbon-menu { margin: 0.5rem 0; }
+        .ribbon-dropdown { padding: 0.5rem; margin: 0.25rem; }
+    </style>
+</head>
+<body>
+
+<div class="ms-ribbon">
+    <nav class="ribbon-nav">
+        <div class="ribbon-tabs">
+            <section class="ribbon-tab" id="tabAccounting" >
+                <h2>Accounting</h2>
+                <div class="ribbon-group" id="grpAP">
+                    <h3>A/P Entry</h3>
+                    <button id="button_PoPaybles" class="ribbon-button large" data-tag="PO_Payable" data-image="">P/O Payables</button>
+                    <button id="button_MiscPayables" class="ribbon-button large" data-tag="Misc_Payable" data-image="">Misc Payables</button>
+                    <button id="button_LatePayables" class="ribbon-button large" data-tag="Misc_Payable_LateWo" data-image="FileMarkAsFinal">Late Payables</button>
+                </div>
+                <div class="ribbon-group" id="grpAP2">
+                    <h3>A/P Reporting</h3>
+                    <button id="button_ApAgeing" class="ribbon-button " data-tag="AP_Ageing" data-image="FilePrint">Ageing</button>
+                    <button id="button_Clearing" class="ribbon-button " data-tag="AP_Clearing" data-image="FilePrint">Clearing</button>
+                        <button id="button_APhist" class="ribbon-button " data-tag="Look_AP" data-image="">History</button>
+                        <button id="button_APmisc" class="ribbon-button " data-tag="Misc_Payable_Inq" data-image="">Misc Payables</button>
+                        <button id="button_APpo" class="ribbon-button " data-tag="PO_Payable_Inq" data-image="">P/O Payables</button>
+                        <button id="button_APrcvr" class="ribbon-button " data-tag="RcvrInq" data-image="">Receivers</button>
+                        <button id="button_APrcvr2" class="ribbon-button " data-tag="APopenRunning" data-image="FilePrint">Worksheet</button>
+                </div>
+                <div class="ribbon-group" id="grpAP3">
+                    <h3>A/P Check Processing</h3>
+                    <button id="button_PaySel" class="ribbon-button large" data-tag="Payment_Selection" data-image="">Payment Selection</button>
+                        <button id="button_APchkPreview" class="ribbon-button " data-tag="Check_Preview" data-image="FindDialog">Preview</button>
+                        <button id="button_APchkPrint" class="ribbon-button " data-tag="AP_Checks" data-image="FilePrint">Print</button>
+                        <button id="button_APchkReg" class="ribbon-button " data-tag="AP_Check_Reg" data-image="ReviewViewChangesInTheSourceDocument">Register</button>
+                    <button id="button_APhandwrite" class="ribbon-button " data-tag="AP_Handwrite" data-image="ReviewEditComment">Handwrite</button>
+                    <button id="button_APchkRecon" class="ribbon-button " data-tag="Check_Recon" data-image="ReviewAcceptChange">Check Reconcilation</button>
+                        <button id="button_APpartial" class="ribbon-button " data-tag="Partial_Payments" data-image="">Partial Payments</button>
+                        <button id="button_APchkMaint" class="ribbon-button " data-tag="Check_Maint" data-image="">Check Maintenance</button>
+                        <button id="button_APvoid" class="ribbon-button " data-tag="Void_Check" data-image="">Void Check</button>
+                        <button id="button_AP1099" class="ribbon-button " data-tag="Ven_1099" data-image="FilePrint">Vendor 1099</button>
+                        <button id="button_APChkRpt" class="ribbon-button " data-tag="Check_Recon_Rpt" data-image="FilePrint">Check Recon Rpt</button>
+                </div>
+                <div class="ribbon-group" id="grpAR1">
+                    <h3>A/R Entry</h3>
+                    <button id="button_Cash" class="ribbon-button large" data-tag="Cash" data-image="">Cash Application</button>
+                    <button id="button_MiscCash" class="ribbon-button large" data-tag="Misc_Cash" data-image="">Miscellaneous Cash</button>
+                </div>
+                <div class="ribbon-group" id="grpAR2">
+                    <h3>A/R Reporting</h3>
+                    <button id="button_CashJrl" class="ribbon-button large" data-tag="Cash_Receipts" data-image="PivotTableLayoutReportLayout">Cash Receipts Journal</button>
+                        <button id="button_ArStatements" class="ribbon-button " data-tag="Statements" data-image="FilePrint">Statements</button>
+                        <button id="button_ArAgeing" class="ribbon-button " data-tag="Ageing" data-image="FilePrint">Ageing</button>
+                    <button id="button_ARhist" class="ribbon-button " data-tag="Look_AR" data-image="FindDialog">History Inquiry</button>
+                    <button id="button_ARpaydist" class="ribbon-button " data-tag="AR_PAY_DIST" data-image="FindDialog">Payment Distribution</button>
+                        <button id="button_ARage" class="ribbon-button " data-tag="Age_AR" data-image="AccessFormWizard">Ageing Invoices</button>
+                        <button id="button_ARpaydays" class="ribbon-button " data-tag="Avg_Pay_Date" data-image="ProposeNewTime">Reset Avg Pay Days</button>
+                        <button id="button_ARserv" class="ribbon-button " data-tag="ServiceCharges" data-image="DollarSign">Service Charges</button>
+                </div>
+                <div class="ribbon-group" id="grpFC">
+                    <h3>Financial Codes</h3>
+                    <button id="button_Bank" class="ribbon-button " data-tag="Bank" data-image="DollarSign">Bank</button>
+                    <button id="button_Exchange" class="ribbon-button " data-tag="Exchange" data-image="ReviewViewChangesInTheSourceDocument">Exchange</button>
+                    <button id="button_Terms" class="ribbon-button " data-tag="Terms" data-image="ViewAllProposals">Terms</button>
+                    <button id="button_CrRate" class="ribbon-button " data-tag="CrRating" data-image="Lock">Credit Rating</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabCA" >
+                <h2>Cost Accounting</h2>
+                <div class="ribbon-group" id="grpRollup">
+                    <h3>Roll-Ups</h3>
+                    <button id="button_CSTbottomup" class="ribbon-button large" data-tag="Bottom_Up_Cost" data-image="">Bottom-Up</button>
+                    <button id="button_CSTbottomcum" class="ribbon-button large" data-tag="Bottom_Up_Cost_Cum" data-image="">Cummulative</button>
+                    <button id="button_CSTrouting" class="ribbon-button large" data-tag="Routing_Rollup" data-image="">Routing</button>
+                </div>
+                <div class="ribbon-group" id="grpCOST">
+                    <h3>Accounting</h3>
+                    <button id="button_CSTpartsacct" class="ribbon-button large" data-tag="Parts_Acct" data-image="">Parts</button>
+                    <button id="button_CSTpartsacctinq" class="ribbon-button large" data-tag="Parts_Acct_Cum" data-image="WatchWindow">Inquiry</button>
+                    <button id="button_CSTroutingcst" class="ribbon-button " data-tag="Routing_Cost" data-image="AccessFormDatasheet">Routing</button>
+                    <button id="button_CSTcostsrpt" class="ribbon-button " data-tag="Inv_Cost" data-image="FilePrint">Inventory Costs</button>
+                        <button id="button_CSTstore" class="ribbon-button " data-tag="SaveAcctVal" data-image="FileSave">Store Month End Value</button>
+                        <button id="button_CSTiavgcost" class="ribbon-button " data-tag="InitializeAverageCost" data-image="AccessFormDatasheet">Initialize Avg Cost</button>
+                </div>
+                <div class="ribbon-group" id="grpCSTwo">
+                    <h3>Work Orders</h3>
+                    <button id="button_CSTwoclose" class="ribbon-button large" data-tag="WOCLS" data-image="">Close</button>
+                    <button id="button_CSTwosum" class="ribbon-button large" data-tag="Closed_Wo_Sum" data-image="">Summarization</button>
+                        <button id="button_CSTfc" class="ribbon-button " data-tag="Close_Wo" data-image="TableIndexes">Force Complete</button>
+                        <button id="button_CSTrev" class="ribbon-button " data-tag="RevWoSum" data-image="DiagramReverseClassic">Reverse Summarization</button>
+                </div>
+                <div class="ribbon-group" id="grpCSTrpt">
+                    <h3>Work Order Reporting</h3>
+                        <button id="button_SumInq" class="ribbon-button " data-tag="WO_Sum_Inq" data-image="PropertySheet">Summary Inquiry</button>
+                        <button id="button_WOcosts" class="ribbon-button " data-tag="WO_Costs" data-image="DollarSign">Costs</button>
+                        <button id="button_Wostats" class="ribbon-button " data-tag="Costs" data-image="DatabaseEncodeDecode">Stats</button>
+                        <button id="button_WIPclearing" class="ribbon-button " data-tag="WIP_Clearing" data-image="FilePrint">Clearing</button>
+                        <button id="button_WIPValue" class="ribbon-button " data-tag="WIP_Value" data-image="FilePrint">Value</button>
+                        <button id="button_GLbal" class="ribbon-button " data-tag="NewWoCosting" data-image="IndexMarkEntry">G/L Balancing</button>
+                        <button id="button_WoAudit" class="ribbon-button " data-tag="Audit_WO" data-image="ReviewAcceptChange">Audit</button>
+                </div>
+                <div class="ribbon-group" id="grpTC">
+                    <h3>Time Cards</h3>
+                    <button id="button_TCentry" class="ribbon-button large" data-tag="Time_Card_Entry" data-image="">Entry</button>
+                    <button id="button_TCproof" class="ribbon-button " data-tag="TimeCardReport" data-image="FileDocumentInspect">Proof</button>
+                    <button id="button_TCupdate" class="ribbon-button " data-tag="TimeCard_Update" data-image="AccessFormWizard">Update</button>
+                    <button id="button_TCreverse" class="ribbon-button " data-tag="Timecard_Reversal" data-image="DiagramReverseClassic">Reversal</button>
+                    <button id="button_TCinquiry" class="ribbon-button large" data-tag="TimeInquiry" data-image="WatchWindow">Inquiry</button>
+                    <button id="button_TCpostrpt" class="ribbon-button " data-tag="TimeCardPostReport" data-image="FilePrint">Posted Report</button>
+                    <button id="button_TCindlabsum" class="ribbon-button " data-tag="IndirectLabSumRpt" data-image="FilePrint">Indirect Labor Sum</button>
+                    <button id="button_TCweeklytime" class="ribbon-button " data-tag="WeeklyTime" data-image="FilePrint">Weekly Time</button>
+                        <button id="button_TCindirect" class="ribbon-button " data-tag="Indirect_Codes" data-image="">Indirect</button>
+                        <button id="button_TCratetype" class="ribbon-button " data-tag="RateTypes" data-image="">Rate Type</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabCustomerService" >
+                <h2>Customer Service</h2>
+                <div class="ribbon-group" id="grpCustomers">
+                    <h3>Customers</h3>
+                    <button id="button_Customers" class="ribbon-button large" data-tag="Customers" data-image="">Add/Maintain</button>
+                    <button id="button_ShipTo" class="ribbon-button large" data-tag="ShipTo" data-image="">Ship To</button>
+                        <button id="button_Credit" class="ribbon-button " data-tag="Credit" data-image="AccessFormDatasheet">Credit - S/O</button>
+                        <button id="button_SetCredit" class="ribbon-button " data-tag="Set_Credit" data-image="AccessFormDatasheet">Set Credit Limit</button>
+                    <button id="button_CustInq" class="ribbon-button " data-tag="CustInq" data-image="FindDialog">Inquiry</button>
+                    <button id="button_CustPriceQuotes" class="ribbon-button " data-tag="Cust_Price_Quotes" data-image="DollarSign">Price Quotations</button>
+                        <button id="button_CUstList" class="ribbon-button " data-tag="List_Cust" data-image="FilePrint">Cust Listing</button>
+                        <button id="button_ShipToList" class="ribbon-button " data-tag="List_Shipto" data-image="FilePrint">Ship-To Listing</button>
+                    <button id="button_DelCust" class="ribbon-button " data-tag="Delete_Customer" data-image="Delete">Delete</button>
+                        <button id="myLauncherCustomers" class="ribbon-button " data-tag="" data-image=""></button>
+                </div>
+                <div class="ribbon-group" id="grpSalesOrders">
+                    <h3>Sales Orders</h3>
+                    <button id="button_Sales" class="ribbon-button large" data-tag="Sales" data-image="">Sales</button>
+                    <button id="button_SalesInq" class="ribbon-button large" data-tag="Sales_Inq" data-image="WatchWindow">Inquiry</button>
+                        <button id="button_AckPrint" class="ribbon-button " data-tag="Print_Ack" data-image="FilePrint">Print</button>
+                        <button id="button_AckEmail" class="ribbon-button " data-tag="Print_Ack_Email" data-image="EnvelopesAndLabelsDialog">E-Mail</button>
+                        <button id="button_AckFax" class="ribbon-button " data-tag="Print_Ack_Fax" data-image="FileInternetFax">Fax</button>
+                        <button id="button_ShipGen" class="ribbon-button " data-tag="Shiplist_Gen" data-image="CreateReportFromWizard">Generate Ship Lists</button>
+                        <button id="button_ShipPrint" class="ribbon-button " data-tag="Shiplist_Print" data-image="FilePrint">Print Ship Lists</button>
+                        <button id="button_ShipCancel" class="ribbon-button " data-tag="Cncl_Ship" data-image="DeclineInvitation">Cancel Ship Lists</button>
+                        <button id="button_Commit" class="ribbon-button " data-tag="CommitOrders" data-image="AcceptInvitation">Commit Sales Orders</button>
+                        <button id="button_OnTime" class="ribbon-button " data-tag="OnTimeShipments" data-image="FilePrint">On Time Shipping Report</button>
+                        <button id="button_LotHist" class="ribbon-button " data-tag="LotHistory" data-image="AccessFormDatasheet">Lot History</button>
+                </div>
+                <div class="ribbon-group" id="grpNotifications">
+                    <h3>Notifications</h3>
+                    <button id="button_ShipNote" class="ribbon-button large" data-tag="ShipNote" data-image="ViewWebLayoutView">Shipping</button>
+                </div>
+                <div class="ribbon-group" id="grpInvoicing">
+                    <h3>Invoicing</h3>
+                        <button id="button_CMentry" class="ribbon-button " data-tag="Credit_Memo" data-image="TableDrawTable">Credit/Debit Memos</button>
+                        <button id="button_CMprint" class="ribbon-button " data-tag="Credit_Memo_Print" data-image="FilePrint">Credit/Debit Print</button>
+                        <button id="button_InvAudit" class="ribbon-button " data-tag="Pre-Invoice_Gen" data-image="AcceptInvitation">Audit</button>
+                        <button id="button_InvGen" class="ribbon-button " data-tag="Invoice_Gen" data-image="CreateReportFromWizard">Generation</button>
+                        <button id="button_InvPrint" class="ribbon-button " data-tag="Invoice_Print" data-image="FilePrint">Print</button>
+                        <button id="button_InvEmail" class="ribbon-button " data-tag="Invoice_Print_Email" data-image="EnvelopesAndLabelsDialog">E-Mail</button>
+                        <button id="button_InvFax" class="ribbon-button " data-tag="Invoice_Print_Fax" data-image="FileInternetFax">Fax</button>
+                        <button id="button_InvReg" class="ribbon-button " data-tag="InvoiceRegister" data-image="FilePrint">Register</button>
+                        <button id="button_PreInvSched" class="ribbon-button " data-tag="PI_Enter" data-image="AccessFormDatasheet">Scheduling</button>
+                        <button id="button_PreInvList" class="ribbon-button " data-tag="PI_List" data-image="FileDocumentInspect">Listing</button>
+                        <button id="button_PreInvGen" class="ribbon-button " data-tag="PI_Invoice_Gen" data-image="CreateReportFromWizard">Generation</button>
+                        <button id="button_PreInvPrint" class="ribbon-button " data-tag="PI_Invoice_Print" data-image="FilePrint">Print</button>
+                        <button id="button_InvCosting" class="ribbon-button " data-tag="Invoice_Costing_Report" data-image="FilePrint">Invoice Costing</button>
+                        <button id="button_MthInvReg" class="ribbon-button " data-tag="Monthly_Invoice_Register" data-image="FilePrint">Monthly Invoice Register</button>
+                        <button id="button_SalesTax" class="ribbon-button " data-tag="Sales_Tax_Report" data-image="T">Sales Tax</button>
+                        <button id="button_CorrectInvoices" class="ribbon-button " data-tag="Correct_Manual_Invoice_Nbr" data-image="InkEraseMode">Correct Manual Invoice Nbrs</button>
+                        <button id="button_InvoiceMaint" class="ribbon-button " data-tag="InvoiceMaint" data-image="InkEraseMode">Invoice Maintenace</button>
+                        <button id="button_UnInvoiced" class="ribbon-button " data-tag="NotInvoiced" data-image="FilePermissionView">Orders Not Invoiced</button>
+                    <button id="button_Proforma" class="ribbon-button " data-tag="Print_Proforma" data-image="FilePrint">Proforma</button>
+                </div>
+                <div class="ribbon-group" id="grpPricing">
+                    <h3>Pricing</h3>
+                    <button id="button_PartsMkt" class="ribbon-button large" data-tag="Parts_Mkt" data-image="OutlookGlobe">Parts Marketing</button>
+                    <button id="button_PriceMatrix" class="ribbon-button " data-tag="Price_Matrix_Maint" data-image="AccessFormDatasheet">Price Matrix</button>
+                    <button id="button_PriceMatrixList" class="ribbon-button " data-tag="Price_Matrix_Print" data-image="FileDocumentInspect">Matrix Listing</button>
+                    <button id="button_PriceList" class="ribbon-button " data-tag="PriceList" data-image="FilePrint">Price List</button>
+                </div>
+                <div class="ribbon-group" id="grpQuoting">
+                    <h3>Quoting</h3>
+                    <button id="button_QtEntry" class="ribbon-button large" data-tag="Quotes" data-image="">Entry</button>
+                    <button id="button_QtPrint" class="ribbon-button " data-tag="Print_Quotes" data-image="FilePrint">Print</button>
+                    <button id="button_QtConvert" class="ribbon-button " data-tag="QuoteConvert" data-image="PublishToPdfOrEdoc">Convert To S/O</button>
+                    <button id="button_QtFollow" class="ribbon-button " data-tag="Quotes_Follow" data-image="CopyToPersonalTaskList">Follow-Up</button>
+                </div>
+                <div class="ribbon-group" id="grpCodes">
+                    <h3>Codes</h3>
+                        <button id="button_XCharge" class="ribbon-button " data-tag="XCharge" data-image="DollarSign">Extra Charge</button>
+                        <button id="button_MiscSales" class="ribbon-button " data-tag="Misc_Codes" data-image="M">Miscellaneous Sales</button>
+                        <button id="button_TaxCodes" class="ribbon-button " data-tag="Tax_Code_Maint" data-image="T">Tax</button>
+                        <button id="button_Rep" class="ribbon-button " data-tag="Reps" data-image="AccessTableContacts">Representatives</button>
+                        <button id="button_Salesman" class="ribbon-button " data-tag="Salesman" data-image="AccessListContacts">Salesman</button>
+                        <button id="button_Territory" class="ribbon-button " data-tag="Territory" data-image="_3DBevelPictureTopGallery">Territory</button>
+                        <button id="button_ShipMethod" class="ribbon-button " data-tag="ShipMethod" data-image="">Shipping Method</button>
+                        <button id="button_StatusCode" class="ribbon-button " data-tag="OrderTypes" data-image="">Status Codes</button>
+                        <button id="button_SalesTypes" class="ribbon-button " data-tag="SalesTypes" data-image="">Sales Type</button>
+                        <button id="button_LeadCodes" class="ribbon-button " data-tag="Leads" data-image="">Leads</button>
+                        <button id="button_BusUnit" class="ribbon-button " data-tag="BusinessUnit" data-image="">Business Unit</button>
+                        <button id="button_Country" class="ribbon-button " data-tag="Country" data-image="">Country</button>
+                        <button id="button_CustGroup" class="ribbon-button " data-tag="CustomerGroup" data-image="">Customer Group</button>
+                        <button id="button_MarketSeg" class="ribbon-button " data-tag="MarketSegment" data-image="">Market Segment</button>
+                        <button id="button_SoCalendar" class="ribbon-button " data-tag="SoCalendar" data-image="ViewAllProposals">S/O Calendar</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabFinancial" >
+                <h2>Financial</h2>
+                <div class="ribbon-group" id="grpBGT">
+                    <h3>Budgeting</h3>
+                    <button id="button_BGTentry" class="ribbon-button large" data-tag="Bgt_Entry" data-image="">Entry</button>
+                    <button id="button_BGTInquiry" class="ribbon-button large" data-tag="Bgt_Inq" data-image="WatchWindow">Inquiry</button>
+                </div>
+                <div class="ribbon-group" id="grpGL1">
+                    <h3>G/L Setup</h3>
+                    <button id="button_GlCoEntry" class="ribbon-button large" data-tag="GL_CO_Maint" data-image="">Company Entry</button>
+                    <button id="button_GlDivision" class="ribbon-button large" data-tag="Division" data-image="WindowSwitchWindowsMenuExcel">Division Entry</button>
+                    <button id="button_GlCoPlantEntry" class="ribbon-button large" data-tag="CoPlant" data-image="">Plant Entry</button>
+                    <button id="button_GlCoaEntry" class="ribbon-button large" data-tag="GL_Coa_Maint" data-image="">COA Maint</button>
+                        <button id="button_GlCoaList" class="ribbon-button " data-tag="GL_Coa_List" data-image="FilePrint">COA Listing</button>
+                            <button id="button_GlInqAcct" class="ribbon-button " data-tag="Gl_Inq_Acct" data-image="">Account</button>
+                            <button id="button_GlInqPer" class="ribbon-button " data-tag="Gl_Inq_Per" data-image="">Period</button>
+                            <button id="button_GlInqYr" class="ribbon-button " data-tag="Gl_Inq_Yr" data-image="">Fiscal Year</button>
+                            <button id="button_GlInqDetail" class="ribbon-button " data-tag="Gl_Inq_Detail" data-image="">Transactions</button>
+                            <button id="button_GlControl" class="ribbon-button " data-tag="MCF_Maint_GL" data-image="SaveSelectionToTableOfContentsGallery">Control</button>
+                            <button id="button_DelCOA" class="ribbon-button " data-tag="Delete_ChartOfAcct" data-image="Delete">Delete COA</button>
+                </div>
+                <div class="ribbon-group" id="grpGL2">
+                    <h3>G/L Journals</h3>
+                    <button id="button_GlJrnlEntry" class="ribbon-button large" data-tag="GL_Jrnl_Entry" data-image="">Entry</button>
+                    <button id="button_GlJrnlRe" class="ribbon-button " data-tag="ReoccurringJournal" data-image="RecurrenceEdit">Reoccuring</button>
+                    <button id="button_GlJrnlReverse" class="ribbon-button " data-tag="GL_Reverse_JRNL_Entry" data-image="DiagramReverseClassic">Reverse Posted</button>
+                    <button id="button_GlJrnlList" class="ribbon-button " data-tag="GL_Jrnl_Print" data-image="FilePrint">Listing</button>
+                    <button id="button_GlInvJrnl" class="ribbon-button large" data-tag="Inv_Journal" data-image="">Inventory</button>
+                </div>
+                <div class="ribbon-group" id="grpGL3">
+                    <h3>G/L Processing</h3>
+                    <button id="button_GlPost" class="ribbon-button large" data-tag="GL_GLT_Convert" data-image="FileManageMenu">Posting</button>
+                    <button id="button_GlClose" class="ribbon-button large" data-tag="GL_Close" data-image="RecurrenceEditSeries">Closing</button>
+                        <button id="button_GlCorrect" class="ribbon-button " data-tag="GLT_Fix" data-image="TableEraser">Correct Transactions</button>
+                        <button id="button_GlErrorRpt" class="ribbon-button " data-tag="GLT_Error_Rpt" data-image="FilePrint">Posting Error Report</button>
+                        <button id="button_GlYEClose" class="ribbon-button " data-tag="GL_YE_Close" data-image="RecurrenceEditSeries">Year-End Close</button>
+                        <button id="button_GlInitalize" class="ribbon-button " data-tag="GL_Initial_Yr" data-image="QueryAppend">Initialize New Year</button>
+                </div>
+                <div class="ribbon-group" id="grpGL4">
+                    <h3>G/L Reporting</h3>
+                        <button id="button_GlDailyJrnl" class="ribbon-button " data-tag="Daily_Journal" data-image="AccessListEvents">Daily Journal</button>
+                        <button id="button_GlPeriodJrnl" class="ribbon-button " data-tag="Daily_Journal_Period" data-image="AccessListCustomDatasheet">Period Journal</button>
+                        <button id="button_GlMicroTB" class="ribbon-button " data-tag="GL_Det_TB_SD" data-image="PivotTableLayoutShowInCompactForm">Micro Trial Balance</button>
+                        <button id="button_GlDetTB" class="ribbon-button " data-tag="GL_Det_TB" data-image="ColumnsDialog">Detail Trial Balance</button>
+                        <button id="button_GlSumTB" class="ribbon-button " data-tag="GL_Sum_TB" data-image="ViewDraftView">Summary Trial Balance</button>
+                </div>
+                <div class="ribbon-group" id="grpGL5">
+                    <h3>Financial Reporting</h3>
+                        <button id="button_GlObjDef" class="ribbon-button " data-tag="FS_Objects" data-image="ShapesMoreShapes">Object Definition</button>
+                        <button id="button_GlObjGeneration" class="ribbon-button " data-tag="Object_Generation" data-image="TableSharePointListsModifyColumnsAndSettings">Object Generation</button>
+                        <button id="button_GlNewWsDesign" class="ribbon-button " data-tag="NewFinReport" data-image="FileSaveAsExcelXlsx">New Work Sheet Design</button>
+                        <button id="button_GlWsDesign" class="ribbon-button " data-tag="FinancialLocation" data-image="FileSaveAsExcelXlsx">Work Sheet Design</button>
+                        <button id="button_GlWsAudit" class="ribbon-button " data-tag="Financial_Report_Audit" data-image="FilePrint">Work Sheet Audit</button>
+                        <button id="button_GlWsAcctAudit" class="ribbon-button " data-tag="MissingFromFinSheets" data-image="AccessFormDatasheet">G/L Acct Audit</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabInventory" >
+                <h2>Inventory</h2>
+                <div class="ribbon-group" id="grpInv1">
+                    <h3>Stock Movement</h3>
+                        <button id="button_inv1Issue" class="ribbon-button " data-tag="First_Issue" data-image="">1st Issue</button>
+                            <button id="button_invIssue" class="ribbon-button " data-tag="Issue" data-image="">Issue</button>
+                            <button id="button_invIssueGL" class="ribbon-button " data-tag="Issue_GL" data-image="">Issue G/L</button>
+                        <button id="button_inv1Issue2" class="ribbon-button " data-tag="PO_Receipts" data-image="">P/O Receipts</button>
+                            <button id="button_invIssue2" class="ribbon-button " data-tag="Po_Receipts_PartNbr" data-image="AccessFormModalDialog">by Part Nbr</button>
+                            <button id="button_invIssueGL2" class="ribbon-button " data-tag="PO_Receipts_Mass" data-image="CreateFormWithMultipleItems">Entire P/O</button>
+                    <button id="button_invShipments" class="ribbon-button large" data-tag="Shipments" data-image="">Shipments</button>
+                    <button id="button_invProcessShip" class="ribbon-button large" data-tag="Process_Shipments" data-image="">Process Shipments</button>
+                    <button id="button_invWipReceipts" class="ribbon-button large" data-tag="Wip_Receipts" data-image="">WIP Receipts</button>
+                        <button id="button_invTFentry" class="ribbon-button " data-tag="TransferDoc" data-image="CreateFormBlankForm">Entry</button>
+                        <button id="button_invTFprint" class="ribbon-button " data-tag="Transfer_Print" data-image="FilePrint">Print</button>
+                        <button id="button_invTFprocess" class="ribbon-button " data-tag="TransferDocUpdate" data-image="AccessFormWizard">Process</button>
+                        <button id="button_invAdjust" class="ribbon-button " data-tag="Adjust" data-image="">Adjust</button>
+                        <button id="button_invScrap" class="ribbon-button " data-tag="IssuedScrap" data-image="">Scrap</button>
+                        <button id="button_invKits" class="ribbon-button " data-tag="Kits" data-image="">Kits</button>
+                        <button id="button_invUnPlanned" class="ribbon-button " data-tag="UnPlan_Rec" data-image="">Unplanned Receipts</button>
+                        <button id="button_invPoRec" class="ribbon-button " data-tag="PO_Sheet" data-image="">P/O Receiving Sheet</button>
+                        <button id="button_invListInv" class="ribbon-button " data-tag="List_Inv" data-image="">List Inventory</button>
+                        <button id="button_invListInvLoc" class="ribbon-button " data-tag="List_Inv_Loc" data-image="">List Inventory w/Loc</button>
+                        <button id="button_invMatlIss" class="ribbon-button " data-tag="MaterialIssueLog" data-image="">Material Issue Log</button>
+                        <button id="button_invSimpInv" class="ribbon-button " data-tag="BasicOpenInventory" data-image="">Simple Open Inventory</button>
+                        <button id="button_invStkTags" class="ribbon-button " data-tag="StockTags" data-image="">Stock Tags</button>
+                        <button id="button_invInspect" class="ribbon-button " data-tag="Inspect" data-image="">Inspection</button>
+                        <button id="button_invUnProcessShip" class="ribbon-button " data-tag="UnprocessShipment" data-image="">Un-Process Shipments</button>
+                        <button id="button_invPostShip" class="ribbon-button " data-tag="PostShipments" data-image="">Post-Shipments Changes</button>
+                        <button id="button_invScrapCodes" class="ribbon-button " data-tag="Scrap_Codes" data-image="">Scrap Codes</button>
+                </div>
+                <div class="ribbon-group" id="grpInv2">
+                    <h3>Documents</h3>
+                        <button id="button_invTickPrint" class="ribbon-button " data-tag="Delv_Ticket_Print" data-image="FilePrint">Print</button>
+                        <button id="button_invTickRePrint" class="ribbon-button " data-tag="Delivery_Ticket_Reprint" data-image="">Re-Print</button>
+                        <button id="button_invTickCancel" class="ribbon-button " data-tag="Cncl_Delv" data-image="PrintPreviewClose">Cancel</button>
+                    <button id="button_invRma" class="ribbon-button " data-tag="PoReturns" data-image="">RMA (Returns)</button>
+                    <button id="button_invRmaPrint" class="ribbon-button " data-tag="Po_Print_Returns" data-image="FilePrint">RMA Print</button>
+                </div>
+                <div class="ribbon-group" id="grpInv3">
+                    <h3>Warehouse</h3>
+                    <button id="button_invPartsStore" class="ribbon-button large" data-tag="Parts_Store" data-image="">Parts Store</button>
+                    <button id="button_invWareLoc" class="ribbon-button " data-tag="Warehouse" data-image="">Locations</button>
+                    <button id="button_invLocLot" class="ribbon-button " data-tag="Convert_To_LocLot" data-image="OutlineGroup">Loc/Lot Conversion</button>
+                    <button id="button_DelLoc" class="ribbon-button " data-tag="Loc_Remove_Qty" data-image="Delete">Remove Empty Loc/Lots</button>
+                </div>
+                <div class="ribbon-group" id="grpInv4">
+                    <h3>Statistics</h3>
+                    <button id="button_invCalcMeQty" class="ribbon-button large" data-tag="CalcMeQty" data-image="">Month-End Quantities</button>
+                    <button id="button_invCalcUsage" class="ribbon-button large" data-tag="CalcUsage" data-image="">Usage</button>
+                </div>
+                <div class="ribbon-group" id="grpInv5">
+                    <h3>Inquiry / Lot Tracking</h3>
+                    <button id="button_invPartInq" class="ribbon-button large" data-tag="Part_Inq" data-image="WatchWindow">Parts Inquiry</button>
+                    <button id="button_invMlPeg" class="ribbon-button large" data-tag="ML_Activity" data-image="SmartArtOrganizationChartBoth">Multi-Level Pegging</button>
+                    <button id="button_invLotTracker" class="ribbon-button large" data-tag="LotTracker" data-image="SmartArtOrganizationChartRightHanging">Lot Tracker</button>
+                        <button id="button_LotLookup" class="ribbon-button " data-tag="LocLotInq" data-image="FindDialog">Loc/Lot Lookup</button>
+                        <button id="button_LotInq" class="ribbon-button " data-tag="LotInquiry" data-image="FindDialog">Lot Inquiry</button>
+                        <button id="button_LotCode" class="ribbon-button " data-tag="LotCodeMaint" data-image="">Lot Code Maint</button>
+                        <button id="button_PartHist" class="ribbon-button " data-tag="Part_Hist" data-image="ReadingMode">Inventory History</button>
+                        <button id="button_LotQty" class="ribbon-button " data-tag="LotQty" data-image="">Lot Quantity</button>
+                </div>
+                <div class="ribbon-group" id="grpInv6">
+                    <h3>Accounting</h3>
+                    <button id="button_invValue" class="ribbon-button large" data-tag="Stock_GL" data-image="FileInternetFax">G/L Value</button>
+                        <button id="button_invObsRpt" class="ribbon-button " data-tag="Obs_Print" data-image="FilePrint">Obsolete Inventory</button>
+                </div>
+                <div class="ribbon-group" id="grpInv7">
+                    <h3>Physical Inventory</h3>
+                        <button id="button_CycleTags" class="ribbon-button " data-tag="CycleCountTags" data-image="CreateReportFromWizard">Generate Tags</button>
+                        <button id="button_CycleSheets" class="ribbon-button " data-tag="CountSheets" data-image="PageSetupPageDialog">Print Count Sheets</button>
+                        <button id="button_CycleEntry" class="ribbon-button " data-tag="CountSheets_Entry" data-image="TablePropertiesDialog">Count Entry</button>
+                        <button id="button_CycleMissing" class="ribbon-button " data-tag="TagsMissing" data-image="FindDialog">Missing Tags</button>
+                        <button id="button_CycleComp" class="ribbon-button " data-tag="Stock_Comparison_CC" data-image="SourceControlShowDifferences">Stock Comparison</button>
+                        <button id="button_CyclePreview" class="ribbon-button " data-tag="Preview_Update_Inventory" data-image="ZoomPrintPreviewExcel">Preview</button>
+                        <button id="button_CycleUpdate" class="ribbon-button " data-tag="Update_Inventory_CC" data-image="FieldChooser">Update</button>
+                        <button id="button_PhyTags" class="ribbon-button " data-tag="AssignTags" data-image="CreateReportFromWizard">Generate Tags</button>
+                        <button id="button_PhySheets" class="ribbon-button " data-tag="CountSheets" data-image="PageSetupPageDialog">Print Count Sheets</button>
+                        <button id="button_PhyEntry" class="ribbon-button " data-tag="CountSheets_Entry" data-image="TablePropertiesDialog">Count Entry</button>
+                        <button id="button_PhyMissing" class="ribbon-button " data-tag="TagsMissing" data-image="FindDialog">Missing Tags</button>
+                        <button id="button_PhyComp" class="ribbon-button " data-tag="Stock_Comparison_CC" data-image="SourceControlShowDifferences">Stock Comparison</button>
+                        <button id="button_PhyPreview" class="ribbon-button " data-tag="Preview_Update_Inventory" data-image="ZoomPrintPreviewExcel">Preview</button>
+                        <button id="button_PhyUpdate" class="ribbon-button " data-tag="Update_Inventory" data-image="FieldChooser">Update</button>
+                </div>
+                <div class="ribbon-group" id="grpInv8">
+                    <h3>Utilities</h3>
+                    <button id="button_UtlIPL" class="ribbon-button " data-tag="IPL_Reload" data-image="">IPL Clear/Reload</button>
+                    <button id="button_UtlAlloc" class="ribbon-button " data-tag="Utl_Rebuild_Alloc" data-image="">Rebuild Allocated</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabManufacturing" >
+                <h2>Manufacturing</h2>
+                <div class="ribbon-group" id="grpPur1">
+                    <h3>Vendors</h3>
+                    <button id="button_Vendors" class="ribbon-button large" data-tag="Vendors" data-image="">Entry</button>
+                    <button id="button_Plants" class="ribbon-button large" data-tag="Plants" data-image="">Plant Entry</button>
+                        <button id="button_InqVendor" class="ribbon-button " data-tag="VendorInq" data-image="">Vendor Inquiry</button>
+                        <button id="button_InqVendorPO" class="ribbon-button " data-tag="OpenPo" data-image="">Open P/Os</button>
+                        <button id="button_InqOutPlant" class="ribbon-button " data-tag="OutplantInq" data-image="">Outplant Inquiry</button>
+                        <button id="button_OutpRpt" class="ribbon-button " data-tag="Outplant_Rpt" data-image="">Outplant Report</button>
+                        <button id="button_VendList" class="ribbon-button " data-tag="List_Ven" data-image="">Vendor Listing</button>
+                        <button id="button_VenQuote" class="ribbon-button " data-tag="Vendor_Price_Quotes" data-image="">Vendor Quotations</button>
+                        <button id="button_VenLate" class="ribbon-button " data-tag="Late_Vendor" data-image="">Late Vendors</button>
+                        <button id="button_VenPOS" class="ribbon-button " data-tag="AllPO" data-image="">P/O Management</button>
+                </div>
+                <div class="ribbon-group" id="grpAnal">
+                    <h3>Analysis</h3>
+                    <button id="button_Analysis" class="ribbon-button large" data-tag="Matl_Analysis" data-image="">Material</button>
+                </div>
+                <div class="ribbon-group" id="grpPur2">
+                    <h3>Purchase Orders</h3>
+                    <button id="button_PoEntry" class="ribbon-button large" data-tag="Purchase" data-image="">Entry</button>
+                    <button id="button_PoToStart" class="ribbon-button large" data-tag="PoToStart" data-image="">P/O To Start</button>
+                    <button id="button_PoToStartOutPlant" class="ribbon-button large" data-tag="PoToStartOutPlant" data-image="">P/O To Start OutPlant</button>
+                    <button id="button_BlanketReleases" class="ribbon-button large" data-tag="BlanketVendors" data-image="MailMergeStartMailMergeMenu">Blanket Releases</button>
+                    <button id="button_PoTickler" class="ribbon-button large" data-tag="Po_Tickler" data-image="">Tickler</button>
+                        <button id="button_PoPrint" class="ribbon-button " data-tag="Po_Print" data-image="FilePrint">Print</button>
+                        <button id="button_PoEmail" class="ribbon-button " data-tag="Po_Print_Email" data-image="EnvelopesAndLabelsDialog">E-Mail</button>
+                        <button id="button_PoFax" class="ribbon-button " data-tag="Po_Print_Fax" data-image="FileInternetFax">Fax</button>
+                        <button id="button_PoInq" class="ribbon-button " data-tag="Look_Po" data-image="">P/O Inquiry</button>
+                        <button id="button_PartsPricing" class="ribbon-button " data-tag="PartPricing" data-image="FindDialog">Part Pricing</button>
+                        <button id="button_Prices" class="ribbon-button " data-tag="Prices" data-image="FunctionsLookupReferenceInsertGallery">Price History</button>
+                        <button id="button_Commitments" class="ribbon-button " data-tag="PO_Commit_Rpt" data-image="Chart3DColumnChart">Commitments</button>
+                        <button id="button_PoCodesInq" class="ribbon-button " data-tag="PurchaseCodeInq" data-image="">P/O Codes</button>
+                        <button id="button_PoToStartRpt" class="ribbon-button " data-tag="Po_To_Start" data-image="">P/Os To Start</button>
+                        <button id="button_PoUnconfirmed" class="ribbon-button " data-tag="UnconfirmedPOs" data-image="">Unconfirmed P/Os</button>
+                        <button id="button_PoReceiving" class="ribbon-button " data-tag="Po_Sheet" data-image="">Receiving Sheet</button>
+                        <button id="button_PoListing" class="ribbon-button " data-tag="List_Pod" data-image="">P/O Listing</button>
+                        <button id="button_LatePO" class="ribbon-button " data-tag="Late_Purch_Part" data-image="StartAfterPrevious">Late Parts</button>
+                        <button id="button_PoClose" class="ribbon-button " data-tag="Close_PO" data-image="PrintPreviewClose">Force Close</button>
+                        <button id="button_PoCodes" class="ribbon-button " data-tag="Misc_Po_Codes" data-image="M">Misc Codes</button>
+                </div>
+                <div class="ribbon-group" id="grpSF1">
+                    <h3>Work Orders</h3>
+                    <button id="button_WoEntry" class="ribbon-button large" data-tag="Work_Orders" data-image="">Entry</button>
+                    <button id="button_WoToStart" class="ribbon-button large" data-tag="Wo_To_Start" data-image="">W/Os To Start</button>
+                    <button id="button_WoRelease" class="ribbon-button large" data-tag="Wo_Release" data-image="">W/O Release</button>
+                        <button id="button_PickList" class="ribbon-button " data-tag="Picklists" data-image="FilePrint">Picklists</button>
+                        <button id="button_WoPrint" class="ribbon-button " data-tag="Wo_Print" data-image="FilePrint">Routers</button>
+                        <button id="button_WoCombo" class="ribbon-button " data-tag="Wo_Print_Combo" data-image="ReviewCompareTwoVersions">Combination</button>
+                        <button id="button_Components" class="ribbon-button " data-tag="Allocate" data-image="DesignXml">Components</button>
+                        <button id="button_Operations" class="ribbon-button " data-tag="WO_Operations" data-image="RelationshipsEditRelationships">Operations</button>
+                        <button id="button_CopyBOM" class="ribbon-button " data-tag="CopyBOMtoWO" data-image="AdpDiagramAddRelatedTables">Copy BOMs</button>
+                        <button id="button_WoHold" class="ribbon-button " data-tag="WO_Hold" data-image="PauseTimer">Hold W/O</button>
+                        <button id="button_WoLookup" class="ribbon-button " data-tag="Wo_Part" data-image="">Lookup by Part</button>
+                        <button id="button_WoSumInq" class="ribbon-button " data-tag="Wo_Sum_Inq_Prod" data-image="">W/O Sum Inq Production</button>
+                        <button id="button_Issues" class="ribbon-button " data-tag="Check_Issue" data-image="">Issues</button>
+                        <button id="button_Shorts" class="ribbon-button " data-tag="Shortages" data-image="">Shortages</button>
+                        <button id="button_WoToStartRpt" class="ribbon-button " data-tag="Wo_To_Start_Report_Expanded" data-image="">W/Os To Start</button>
+                        <button id="button_List" class="ribbon-button " data-tag="WO_List" data-image="">List W/Os</button>
+                    <button id="button_WoInq" class="ribbon-button large" data-tag="WO_Info" data-image="WatchWindow">Status</button>
+                </div>
+                <div class="ribbon-group" id="grpSF2">
+                    <h3>Shop Scheduling</h3>
+                    <button id="button_Cap" class="ribbon-button large" data-tag="Shop_Cap" data-image="ShowSchedulingPage">Shop Capacity</button>
+                    <button id="button_MfgTickler" class="ribbon-button large" data-tag="Mfg_Tickler" data-image="">MFG Tickler</button>
+                        <button id="button_Dispatch" class="ribbon-button " data-tag="Dispatch_List" data-image="">Dispatch</button>
+                        <button id="button_PastDue" class="ribbon-button " data-tag="Past_Due_WO" data-image="">Past Due W/Os</button>
+                        <button id="button_WcSched" class="ribbon-button " data-tag="WC_Sched" data-image="PivotSwitchRowColumn">Work Centers</button>
+                </div>
+                <div class="ribbon-group" id="grpSF3">
+                    <h3>Time</h3>
+                    <button id="button_Move" class="ribbon-button large" data-tag="Move_Emp" data-image="ExportSharePointList">Move</button>
+                    <button id="button_Dept" class="ribbon-button " data-tag="Department" data-image="SmartArtOrganizationChartBoth">Department</button>
+                    <button id="button_Emp" class="ribbon-button " data-tag="Employees" data-image="DistributionListAddNewMember">Employees</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabMrpII" >
+                <h2>MRP II</h2>
+                <div class="ribbon-group" id="grpMRP">
+                    <h3>Material Requirements</h3>
+                    <button id="button_MrpGen" class="ribbon-button large" data-tag="MRP_Gen" data-image="">Generation</button>
+                    <button id="button_MrpGenNet" class="ribbon-button large" data-tag="MRP_Gen_NetChangeOnly" data-image="Consolidate">Net Change</button>
+                    <button id="button_MpReq" class="ribbon-button large" data-tag="PM_MRP" data-image="">Manual Planning</button>
+                        <button id="button_MrpReqClear" class="ribbon-button " data-tag="RA_Clear_Load" data-image="">Clear</button>
+                        <button id="button_MrpReqMaint" class="ribbon-button " data-tag="RA_Maint" data-image="">Load</button>
+                        <button id="button_MrpReqValid" class="ribbon-button " data-tag="Val_RQ" data-image="">Validate</button>
+                        <button id="button_MrpDelete" class="ribbon-button " data-tag="Delete_Plans" data-image="Delete">Delete Plans</button>
+                        <button id="button_MrpCal" class="ribbon-button " data-tag="Calendar" data-image="ViewAllProposals">Shop Calendar</button>
+                        <button id="button_MrpChkComp" class="ribbon-button " data-tag="Check_Comp" data-image="TableTestValidationRules">Check Availability</button>
+                </div>
+                <div class="ribbon-group" id="grpFore">
+                    <h3>Forecasting</h3>
+                    <button id="button_ForeMaster" class="ribbon-button large" data-tag="MS_Maint" data-image="">Master Schedule</button>
+                    <button id="button_ForeSale" class="ribbon-button large" data-tag="SF_Maint" data-image="">Sales</button>
+                        <button id="button_ForeRpt" class="ribbon-button " data-tag="MsSfProjection" data-image="">Forecast Projected Sales</button>
+                        <button id="button_ForeMsRpt" class="ribbon-button " data-tag="MS_Print" data-image="">Master Sched / Sales Forecast</button>
+                        <button id="button_ForeMsList" class="ribbon-button " data-tag="MSSfList" data-image="">SF/MS Listing</button>
+                </div>
+                <div class="ribbon-group" id="grpPlan">
+                    <h3>Planning</h3>
+                    <button id="button_PlanMaint" class="ribbon-button large" data-tag="Plan" data-image="CellsInsertDialog">Plan Maint</button>
+                    <button id="button_PlanAllocation" class="ribbon-button large" data-tag="PLO_Maint" data-image="SmartArtOrganizationChartMenu">Component Allocation</button>
+                    <button id="button_PlanRC" class="ribbon-button large" data-tag="Rough_Cut_Cap" data-image="MovieFromFileInsert">Rough Cut</button>
+                    <button id="button_PlanSim" class="ribbon-button large" data-tag="SimulatePlan" data-image="CreateClassModule">Simulate</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabProduction" >
+                <h2>Production</h2>
+                <div class="ribbon-group" id="grpParts">
+                    <h3>Parts</h3>
+                        <button id="button_ptAll" class="ribbon-button " data-tag="Parts_All" data-image="CreateTableInDesignView">Entry</button>
+                            <button id="button_ptEng" class="ribbon-button " data-tag="Parts_Eng" data-image="CreateTableInDesignView">Engineering</button>
+                            <button id="button_ptMfg" class="ribbon-button " data-tag="Parts_Mfg" data-image="ControlToolboxOutlook">Manufacturing</button>
+                            <button id="button_ptStore" class="ribbon-button " data-tag="Parts_Store" data-image="BlogHomePage">Storage</button>
+                    <button id="button_ptBOM" class="ribbon-button large" data-tag="BOM_Maint" data-image="AdpDiagramArrangeTables">Bills Of Material</button>
+                        <button id="button_slb" class="ribbon-button " data-tag="SLB" data-image="">Single Level Bill</button>
+                            <button id="button_slbPrint" class="ribbon-button " data-tag="SLB_Print" data-image="FilePrint">Print</button>
+                            <button id="button_slbWU" class="ribbon-button " data-tag="WU" data-image="">Where-Used</button>
+                        <button id="button_mlb" class="ribbon-button " data-tag="MLB" data-image="">Multi-Level Bill</button>
+                            <button id="button_mlbPrint" class="ribbon-button " data-tag="MLB_Print" data-image="FilePrint">Print</button>
+                            <button id="button_mlbWU" class="ribbon-button " data-tag="MLWU" data-image="">Where-Used</button>
+                        <button id="button_Buyer" class="ribbon-button " data-tag="Buyer" data-image="">Buyer / Planner</button>
+                        <button id="button_CopyBill" class="ribbon-button " data-tag="Copy_Bill" data-image="">Copy Bill</button>
+                        <button id="button_BomMass" class="ribbon-button " data-tag="BOM_Mass_Replace" data-image="">BOM Mass Replace</button>
+                        <button id="button_RecalcLLC" class="ribbon-button " data-tag="Recalc_LLC" data-image="">Recalc LLC</button>
+                        <button id="button_InactivePart" class="ribbon-button " data-tag="Inactive_Part_Validation" data-image="">Check For In-Actives</button>
+                        <button id="button_DelPart" class="ribbon-button " data-tag="Delete_Part" data-image="Delete">Delete Part</button>
+                        <button id="button_PartsType" class="ribbon-button " data-tag="PartsType" data-image="AccessFormDatasheet">Parts Type</button>
+                        <button id="button_PartChange" class="ribbon-button " data-tag="Part_Change" data-image="PictureContrastGallery">Change Part Numbers</button>
+                        <button id="button_DivPlanning" class="ribbon-button " data-tag="DivPlanning" data-image="">Divisional Planning</button>
+                </div>
+                <div class="ribbon-group" id="grpCapacity">
+                    <h3>Capacity</h3>
+                    <button id="button_caWC" class="ribbon-button large" data-tag="Work_Centers" data-image="">Work Centers</button>
+                    <button id="button_caOperations" class="ribbon-button large" data-tag="Operations" data-image="CreateFormInDesignView">Operations</button>
+                    <button id="button_caRoutings" class="ribbon-button large" data-tag="Routing" data-image="CreateModule">Routings</button>
+                        <button id="button_RoutingInq" class="ribbon-button " data-tag="Look_Routing" data-image="">Routing Inquiry</button>
+                        <button id="button_WcWU" class="ribbon-button " data-tag="WC_WU" data-image="">W/C Where-Used</button>
+                        <button id="button_WcList" class="ribbon-button " data-tag="List_Wc" data-image="">W/C List</button>
+                        <button id="button_RtList" class="ribbon-button " data-tag="RoutingListing_Print" data-image="">Routing Listing</button>
+                        <button id="button_CopyRouting" class="ribbon-button " data-tag="Copy_ Routing" data-image="">Copy Routing</button>
+                        <button id="button_WcReplace" class="ribbon-button " data-tag="WC_Mass_Replace" data-image="">W/C Mass Replace</button>
+                        <button id="button_RtComplete" class="ribbon-button " data-tag="MassCompleteRouters" data-image="">Routing Mass Complete</button>
+                        <button id="button_RoutingCtrl" class="ribbon-button " data-tag="Routing_Control" data-image="">Routing Multipliers</button>
+                        <button id="button_DelWC" class="ribbon-button " data-tag="Delete_WC" data-image="Delete">Delete W/C</button>
+                </div>
+                <div class="ribbon-group" id="grpECO">
+                    <h3>Engineering Change</h3>
+                    <button id="button_EcoMaint" class="ribbon-button large" data-tag="ECO_Maint" data-image="PageMenu">Entry</button>
+                    <button id="button_EcoDisp" class="ribbon-button large" data-tag="ECO_Disp" data-image="">Disposition</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabSalesAnalysis" >
+                <h2>Sales Analysis</h2>
+                <div class="ribbon-group" id="grpPF">
+                    <h3>Product Family</h3>
+                    <button id="button_pfEntry" class="ribbon-button large" data-tag="Prod_Fam_Maint" data-image="">Entry</button>
+                    <button id="button_pfRpt" class="ribbon-button " data-tag="Prod_Fam_Rpt" data-image="FilePrint">List</button>
+                    <button id="button_pfSales" class="ribbon-button " data-tag="SalesByProdFam" data-image="FilePrint">Sales</button>
+                </div>
+                <div class="ribbon-group" id="grpOpenOrders">
+                    <h3>Current Orders</h3>
+                    <button id="button_coBacklog" class="ribbon-button large" data-tag="BacklogRpt" data-image="">Backlog</button>
+                        <button id="button_SalesDetail" class="ribbon-button " data-tag="List_SOD" data-image="">Sales Detail</button>
+                        <button id="button_OpenSum" class="ribbon-button " data-tag="OpenSalesOrderSum" data-image="">Open Orders Summary</button>
+                        <button id="button_SalesCur" class="ribbon-button " data-tag="SalesByCurrency" data-image="">Currency</button>
+                </div>
+                <div class="ribbon-group" id="grpSaCust">
+                    <h3>Customers</h3>
+                    <button id="button_SaCustInq" class="ribbon-button large" data-tag="CustSoInq" data-image="WatchWindow">Inquiry</button>
+                    <button id="button_SaCustSum" class="ribbon-button large" data-tag="Cust_Sum_Sales" data-image="FileInternetFax">Summary</button>
+                </div>
+                <div class="ribbon-group" id="grpSaProd">
+                    <h3>Parts</h3>
+                    <button id="button_SaProdLast" class="ribbon-button large" data-tag="Sell" data-image="WatchWindow">Last Sales</button>
+                </div>
+                <div class="ribbon-group" id="grpSalesHist">
+                    <h3>Sales History</h3>
+                        <button id="button_shCust" class="ribbon-button " data-tag="SalesHist_Cust" data-image="C">Customer</button>
+                        <button id="button_shPart" class="ribbon-button " data-tag="SalesHist_Part" data-image="P">Part</button>
+                        <button id="button_shRep" class="ribbon-button " data-tag="SalesHist_Rep" data-image="R">Rep</button>
+                        <button id="button_shStates" class="ribbon-button " data-tag="SalesHist_State" data-image="S">State</button>
+                        <button id="button_shTerr" class="ribbon-button " data-tag="SalesHist_Terr" data-image="T">Territory</button>
+                </div>
+                <div class="ribbon-group" id="grpSalesUtil">
+                    <h3>Utilities</h3>
+                    <button id="button_SaRebuildSa" class="ribbon-button large" data-tag="RebuildSaTable" data-image="ControlToolboxOutlook">Rebuild S/A Table</button>
+                </div>
+            </section>
+            <section class="ribbon-tab" id="tabControl" >
+                <h2>Control</h2>
+                <div class="ribbon-group" id="grpAdmin">
+                    <h3>Admin</h3>
+                    <button id="button_MCF" class="ribbon-button large" data-tag="Mcf_Maint" data-image="">Master Control</button>
+                    <button id="button_NextNum" class="ribbon-button large" data-tag="Mcf_NN" data-image="">Next Numbers</button>
+                    <button id="button_Security" class="ribbon-button large" data-tag="UserSecurity" data-image="Lock">Security</button>
+                    <button id="button_WgAdmin" class="ribbon-button large" data-tag="SecurityPassword" data-image="DatabasePermissionsMenu">Security DB</button>
+                </div>
+                <div class="ribbon-group" id="grpUser">
+                    <h3>User Menus</h3>
+                    <button id="button_UsrMaint" class="ribbon-button large" data-tag="UserMenuMaint" data-image="">Maintenance</button>
+                    <button id="button_UsrSave" class="ribbon-button large" data-tag="UM_Save" data-image="">Save</button>
+                    <button id="button_UsrRestore" class="ribbon-button large" data-tag="UM_Restore" data-image="">Restore</button>
+                    <button id="button_UsrFields" class="ribbon-button large" data-tag="User_Field_Maint" data-image="CreateForm">UserFields</button>
+                </div>
+                <div class="ribbon-group" id="grpArchive">
+                    <h3>Table Maintenance</h3>
+                        <button id="button_ArchiveAR" class="ribbon-button " data-tag="AR_Purge" data-image="">Accounts Receivable</button>
+                        <button id="button_ArchiveAP" class="ribbon-button " data-tag="AP_Purge" data-image="">Accounts Payable</button>
+                        <button id="button_ArchiveGlTran" class="ribbon-button " data-tag="GL_Trans_Purge" data-image="">G/L Journals</button>
+                        <button id="button_ArchiveGLT" class="ribbon-button " data-tag="GLT_Purge" data-image="">G/L Transactions</button>
+                        <button id="button_ArchiveIT" class="ribbon-button " data-tag="IT_Purge" data-image="">Inventory Transactions</button>
+                        <button id="button_ArchiveSO" class="ribbon-button " data-tag="SO_Purge" data-image="">Sales Orders</button>
+                        <button id="button_PurgeAR" class="ribbon-button " data-tag="AR_Hist_Purge" data-image="">Accounts Receivable</button>
+                        <button id="button_PurgeAP" class="ribbon-button " data-tag="AP_Hist_Purge" data-image="">Accounts Payable</button>
+                </div>
+                <div class="ribbon-group" id="grpYeRolls">
+                    <h3>Year-End</h3>
+                        <button id="button_RollCust" class="ribbon-button " data-tag="Update_CM" data-image="">Customer / Ship-To</button>
+                        <button id="button_RollItem" class="ribbon-button " data-tag="Update_IM" data-image="">Parts</button>
+                        <button id="button_RollVend" class="ribbon-button " data-tag="Update_Ven" data-image="">Vendors</button>
+                </div>
+                <div class="ribbon-group" id="PopPartsExcelM">
+                    <h3>Export</h3>
+                    <button id="PopParts_ExcelM" class="ribbon-button large" data-tag="Excel" data-image="ExportExcel">Excel</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>

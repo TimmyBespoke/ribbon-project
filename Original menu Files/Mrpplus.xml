@@ -1,0 +1,849 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="CallbackOnLoad">
+<ribbon startFromScratch="true">
+<qat>
+<documentControls>
+</documentControls>
+</qat>
+
+<officeMenu>
+<button idMso="FilePrintQuick" visible="true"/>
+<button idMso="FileCompactAndRepairDatabase" insertBeforeMso="FileCloseDatabase"/>
+<button idMso="FileOpenDatabase" visible="false"/>
+<button idMso="FileNewDatabase" visible="false"/>
+<splitButton idMso="FileSaveAsMenuAccess" visible="false">
+</splitButton>
+</officeMenu>
+<tabs>
+
+<tab id="tabAccounting" label="Accounting">
+<group id="grpAP" label="A/P Entry">
+<button id="button_PoPaybles" label="P/O Payables" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="PO_Payable"/>
+<button id="button_MiscPayables" label="Misc Payables" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Misc_Payable"/>
+<button id="button_LatePayables" label="Late Payables" onAction="CallOnAction" imageMso="FileMarkAsFinal" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Misc_Payable_LateWo"/>
+</group>
+<group id="grpAP2" label="A/P Reporting">
+<dropDown id="ddAP1"
+          showLabel="true"
+          label="Select"
+	  getSelectedItemIndex="CallbackDDGetSelectedItemIndex"
+          onAction="CallbackDropDownOnAction">
+
+          <item id="itmDD1" label="As Of" />
+          <item id="itmDD2" label="Current" />
+</dropDown>
+<button id="button_ApAgeing" label="Ageing" onAction="CallOnAction" imageMso="FilePrint" tag="AP_Ageing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Clearing" label="Clearing" onAction="CallOnAction" imageMso="FilePrint" tag="AP_Clearing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<separator id="APSeparator2" />
+<menu id="menu_APinq" label="Inquiries" size="large" imageMso="WatchWindow">
+<button id="button_APhist" label="History" onAction="CallOnAction" tag="Look_AP" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APmisc" label="Misc Payables" onAction="CallOnAction" tag="Misc_Payable_Inq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APpo" label="P/O Payables" onAction="CallOnAction" tag="PO_Payable_Inq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APrcvr" label="Receivers" onAction="CallOnAction" tag="RcvrInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_APrpts" label="Reports" imageMso="OutlineExpand">
+<button id="button_APrcvr2" label="Worksheet" imageMso="FilePrint" onAction="CallOnAction" tag="APopenRunning" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+</group>
+
+<group id="grpAP3" label="A/P Check Processing">
+<button id="button_PaySel" label="Payment Selection" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Payment_Selection"/>
+<separator id="MySeparator4"/>
+<box id="myBoxAP1" boxStyle="vertical">
+<button id="button_APchkPreview" label="Preview" onAction="CallOnAction" imageMso="FindDialog" tag="Check_Preview" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APchkPrint" label="Print" onAction="CallOnAction" imageMso="FilePrint" tag="AP_Checks" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APchkReg" label="Register" onAction="CallOnAction" imageMso="ReviewViewChangesInTheSourceDocument" tag="AP_Check_Reg" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>
+<separator id="MySeparator5"/>
+<button id="button_APhandwrite" imageMso="ReviewEditComment" label="Handwrite" onAction="CallOnAction" tag="AP_Handwrite" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APchkRecon" imageMso="ReviewAcceptChange" label="Check Reconcilation" onAction="CallOnAction" tag="Check_Recon" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_APmore" label="More" imageMso="OutlineExpand">
+<button id="button_APpartial" label="Partial Payments" onAction="CallOnAction" tag="Partial_Payments" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APchkMaint" label="Check Maintenance" onAction="CallOnAction" tag="Check_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APvoid" label="Void Check" onAction="CallOnAction" tag="Void_Check" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_AP1099" label="Vendor 1099" imageMso="FilePrint" onAction="CallOnAction" tag="Ven_1099" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_APChkRpt" label="Check Recon Rpt" imageMso="FilePrint" onAction="CallOnAction" tag="Check_Recon_Rpt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+<group id="grpAR1" label="A/R Entry">
+<button id="button_Cash" label="Cash Application" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Cash"/>
+<button id="button_MiscCash" label="Miscellaneous Cash" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Misc_Cash"/>
+</group>
+<group id="grpAR2" label="A/R Reporting">
+<button id="button_CashJrl" label="Cash Receipts Journal" onAction="CallOnAction" imageMso="PivotTableLayoutReportLayout" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Cash_Receipts"/>
+<separator id="MySeparator6"/>
+<box id="myBoxAR1" boxStyle="vertical">
+<button id="button_ArStatements" label="Statements" onAction="CallOnAction" imageMso="FilePrint" tag="Statements" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<dropDown id="ddAR1"
+          showLabel="true"
+          label="Select"
+	  getSelectedItemIndex="CallbackDDGetSelectedItemIndex"
+          onAction="CallbackDropDownOnAction">
+          <item id="itmAR1" label="As Of" />
+          <item id="itmAR2" label="Current" />
+</dropDown>
+<button id="button_ArAgeing" label="Ageing" onAction="CallOnAction" imageMso="FilePrint" tag="Ageing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>
+<separator id="MySeparator7"/>
+<button id="button_ARhist" label="History Inquiry" onAction="CallOnAction" imageMso="FindDialog" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Look_AR"/>
+<button id="button_ARpaydist" label="Payment Distribution" onAction="CallOnAction" imageMso="FindDialog" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="AR_PAY_DIST"/>
+<menu id="menu_ARmore" label="More" imageMso="OutlineExpand">
+<button id="button_ARage" label="Ageing Invoices" imageMso="AccessFormWizard" onAction="CallOnAction" tag="Age_AR" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ARpaydays" label="Reset Avg Pay Days" imageMso="ProposeNewTime" onAction="CallOnAction" tag="Avg_Pay_Date" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ARserv" label="Service Charges" imageMso="DollarSign" onAction="CallOnAction" tag="ServiceCharges" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+<group id="grpFC" label="Financial Codes">
+<button id="button_Bank" label="Bank" onAction="CallOnAction" imageMso="DollarSign" tag="Bank" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Exchange" label="Exchange" onAction="CallOnAction" imageMso="ReviewViewChangesInTheSourceDocument" tag="Exchange" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<separator id="MySeparator8"/>
+<button id="button_Terms" label="Terms" onAction="CallOnAction" imageMso="ViewAllProposals" tag="Terms" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CrRate" label="Credit Rating" onAction="CallOnAction" imageMso="Lock" tag="CrRating" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+</tab>
+
+<tab id="tabCA" label="Cost Accounting">
+<group id="grpRollup" label="Roll-Ups">
+<button id="button_CSTbottomup" label="Bottom-Up" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Bottom_Up_Cost"/>
+<button id="button_CSTbottomcum" label="Cummulative" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Bottom_Up_Cost_Cum"/>
+<button id="button_CSTrouting" label="Routing" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Routing_Rollup"/>
+</group>
+<group id="grpCOST" label="Accounting">
+<button id="button_CSTpartsacct" label="Parts" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Parts_Acct"/>
+<button id="button_CSTpartsacctinq" label="Inquiry" onAction="CallOnAction" imageMso="WatchWindow" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Parts_Acct_Cum"/>
+<separator id="CSTSeparator1"/>
+<button id="button_CSTroutingcst" label="Routing" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="Routing_Cost" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CSTcostsrpt" label="Inventory Costs" onAction="CallOnAction" imageMso="FilePrint" tag="Inv_Cost" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_CSTAddl1" label="More" imageMso="OutlineExpand">
+<button id="button_CSTstore" label="Store Month End Value" onAction="CallOnAction" imageMso="FileSave" tag="SaveAcctVal" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CSTiavgcost" label="Initialize Avg Cost" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="InitializeAverageCost" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+<group id="grpCSTwo" label="Work Orders">
+<button id="button_CSTwoclose" label="Close" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="WOCLS"/>
+<button id="button_CSTwosum" label="Summarization" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Closed_Wo_Sum"/>
+<separator id="CSTSeparator2"/>
+<menu id="menu_CSTutl" label="Utilities" size="large" imageMso="ControlToolboxOutlook">
+<button id="button_CSTfc" label="Force Complete" onAction="CallOnAction" imageMso="TableIndexes" tag="Close_Wo" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CSTrev" label="Reverse Summarization" onAction="CallOnAction" imageMso="DiagramReverseClassic" tag="RevWoSum" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+<group id="grpCSTrpt" label="Work Order Reporting">
+<box id="boxCST1" boxStyle="vertical">
+<button id="button_SumInq" label="Summary Inquiry" onAction="CallOnAction" imageMso="PropertySheet" tag="WO_Sum_Inq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WOcosts" label="Costs" onAction="CallOnAction" imageMso="DollarSign" tag="WO_Costs" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Wostats" label="Stats" onAction="CallOnAction" imageMso="DatabaseEncodeDecode" tag="Costs" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>  
+<separator id="CSTSeparator4"/>
+<box id="boxCST2" boxStyle="vertical">
+<button id="button_WIPclearing" label="Clearing" onAction="CallOnAction" imageMso="FilePrint" tag="WIP_Clearing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<dropDown id="ddCST1"
+          showLabel="true"
+          label="Select"
+	  getSelectedItemIndex="CallbackDDGetSelectedItemIndex"
+          onAction="CallbackDropDownOnAction">
+          <item id="itmCST1" label="As Of" />
+          <item id="itmCST2" label="Current" />
+</dropDown>
+<button id="button_WIPValue" label="Value" onAction="CallOnAction" imageMso="FilePrint" tag="WIP_Value" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GLbal" label="G/L Balancing" onAction="CallOnAction" imageMso="IndexMarkEntry" tag="NewWoCosting" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoAudit" label="Audit" onAction="CallOnAction" imageMso="ReviewAcceptChange" tag="Audit_WO" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>    
+</group>
+
+<group id="grpTC" label="Time Cards">
+<button id="button_TCentry" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Time_Card_Entry"/>
+<separator id="TCSeparator1"/>
+<button id="button_TCproof" label="Proof" onAction="CallOnAction" imageMso="FileDocumentInspect" tag="TimeCardReport" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_TCupdate" label="Update" onAction="CallOnAction" imageMso="AccessFormWizard" tag="TimeCard_Update" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_TCreverse" label="Reversal" onAction="CallOnAction" imageMso="DiagramReverseClassic" tag="Timecard_Reversal" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<separator id="TCSeparator2"/>
+<button id="button_TCinquiry" label="Inquiry" onAction="CallOnAction" imageMso="WatchWindow" size="large" tag="TimeInquiry" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<separator id="TCSeparator3"/>
+<button id="button_TCpostrpt" label="Posted Report" onAction="CallOnAction" imageMso="FilePrint" tag="TimeCardPostReport" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_TCindlabsum" label="Indirect Labor Sum" onAction="CallOnAction" imageMso="FilePrint" tag="IndirectLabSumRpt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_TCweeklytime" label="Weekly Time" onAction="CallOnAction" imageMso="FilePrint" tag="WeeklyTime" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menu id="menu_TCcodes" label="Codes" imageMso="CreateTable">
+<button id="button_TCindirect" label="Indirect" onAction="CallOnAction" tag="Indirect_Codes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_TCratetype" label="Rate Type" onAction="CallOnAction" tag="RateTypes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+</tab>
+
+<tab id="tabCustomerService" label="Customer Service">
+<group id="grpCustomers" label="Customers">
+<button id="button_Customers" label="Add/Maintain" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Customers"/>
+<button id="button_ShipTo" label="Ship To" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="ShipTo"/>
+<menu id="menu_Credit" label="Credit" size="large" getImage="onGetImage" itemSize="large" tag="Credit">
+<button id="button_Credit" label="Credit - S/O" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="Credit" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_SetCredit" label="Set Credit Limit" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="Set_Credit" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<button id="button_CustInq" label="Inquiry" onAction="CallOnAction" imageMso="FindDialog" tag="CustInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CustPriceQuotes" label="Price Quotations" onAction="CallOnAction" imageMso="DollarSign" tag="Cust_Price_Quotes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menu id="menu_CustList" label="Listings" imageMso="FilePrint" tag="menuCustList">
+<button id="button_CUstList" label="Cust Listing" onAction="CallOnAction" imageMso="FilePrint" tag="List_Cust" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ShipToList" label="Ship-To Listing" onAction="CallOnAction" imageMso="FilePrint" tag="List_Shipto" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<button id="button_DelCust" imageMso="Delete" label="Delete" onAction="CallOnAction" tag="Delete_Customer" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+               <dialogBoxLauncher>
+                  <button id="myLauncherCustomers" screentip="Customer Service Module"
+                    supertip= "Used To Maintain The Customer Database"/>
+               </dialogBoxLauncher>
+
+</group>
+<group id="grpSalesOrders" label="Sales Orders">
+<button id="button_Sales" label="Sales" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Sales" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_SalesInq" label="Inquiry" onAction="CallOnAction" imageMso="WatchWindow" size="large" tag="Sales_Inq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_Acknowledgements" label="Acknowledgements" imageMso="MessageToAttendeesMenu">
+<button id="button_AckPrint" label="Print" onAction="CallOnAction" imageMso="FilePrint" tag="Print_Ack" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_AckEmail" label="E-Mail" onAction="CallOnAction" imageMso="EnvelopesAndLabelsDialog" tag="Print_Ack_Email" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_AckFax" label="Fax" onAction="CallOnAction" imageMso="FileInternetFax" tag="Print_Ack_Fax" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_Shiplists" label="Ship Lists" imageMso="PrintAreaMenu">
+<button id="button_ShipGen" label="Generate Ship Lists" onAction="CallOnAction" imageMso="CreateReportFromWizard" tag="Shiplist_Gen" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ShipPrint" label="Print Ship Lists" onAction="CallOnAction" imageMso="FilePrint" tag="Shiplist_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ShipCancel" label="Cancel Ship Lists" onAction="CallOnAction" imageMso="DeclineInvitation" tag="Cncl_Ship" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_SalesAddl" label="More" imageMso="OutlineExpand">
+<button id="button_Commit" label="Commit Sales Orders" onAction="CallOnAction" imageMso="AcceptInvitation" tag="CommitOrders" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_OnTime" label="On Time Shipping Report" onAction="CallOnAction" imageMso="FilePrint" tag="OnTimeShipments" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_LotHist" label="Lot History" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="LotHistory" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+<group id="grpNotifications" label="Notifications">
+<button id="button_ShipNote" label="Shipping" onAction="CallOnAction" imageMso="ViewWebLayoutView" size="large" tag="ShipNote" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpInvoicing" label="Invoicing">
+<menu id="menu_CM" label="Credit/Debit" size="large" getImage="onGetImage" itemSize="large" tag="CMDM">
+<button id="button_CMentry" label="Credit/Debit Memos" onAction="CallOnAction" imageMso="TableDrawTable" tag="Credit_Memo" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CMprint" label="Credit/Debit Print" imageMso="FilePrint" onAction="CallOnAction" tag="Credit_Memo_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<box id="myBoxI1_v" boxStyle="vertical">
+<button id="button_InvAudit" label="Audit" onAction="CallOnAction" imageMso="AcceptInvitation" tag="Pre-Invoice_Gen" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InvGen" label="Generation" onAction="CallOnAction" imageMso="CreateReportFromWizard" tag="Invoice_Gen" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InvPrint" label="Print" onAction="CallOnAction" imageMso="FilePrint" tag="Invoice_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>  
+<separator id="MySeparator2"/>
+<box id="myBoxI2_v" boxStyle="vertical">
+<button id="button_InvEmail" label="E-Mail" onAction="CallOnAction" imageMso="EnvelopesAndLabelsDialog" tag="Invoice_Print_Email" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InvFax" label="Fax" onAction="CallOnAction" imageMso="FileInternetFax" tag="Invoice_Print_Fax" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InvReg" label="Register" onAction="CallOnAction" imageMso="FilePrint" tag="InvoiceRegister" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>  
+<menu id="menu_PreInvoicing" label="Pre-Invoicing" size="large" getImage="onGetImage" tag="PreInvMenu">
+<button id="button_PreInvSched" label="Scheduling" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="PI_Enter" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PreInvList" label="Listing" onAction="CallOnAction" imageMso="FileDocumentInspect" tag="PI_List" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PreInvGen" label="Generation" onAction="CallOnAction" imageMso="CreateReportFromWizard" tag="PI_Invoice_Gen" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PreInvPrint" label="Print" onAction="CallOnAction" imageMso="FilePrint" tag="PI_Invoice_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_InvoicingReports" label="Reports" imageMso="CreateReport">
+<button id="button_InvCosting" label="Invoice Costing" onAction="CallOnAction" imageMso="FilePrint" tag="Invoice_Costing_Report" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MthInvReg" label="Monthly Invoice Register" onAction="CallOnAction" imageMso="FilePrint" tag="Monthly_Invoice_Register" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_SalesTax" label="Sales Tax" onAction="CallOnAction" imageMso="T" tag="Sales_Tax_Report" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_InvoicingAddl" label="More" imageMso="OutlineExpand">
+<button id="button_CorrectInvoices" label="Correct Manual Invoice Nbrs" onAction="CallOnAction" imageMso="InkEraseMode" tag="Correct_Manual_Invoice_Nbr" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InvoiceMaint" label="Invoice Maintenace" onAction="CallOnAction" imageMso="InkEraseMode" tag="InvoiceMaint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_UnInvoiced" label="Orders Not Invoiced" onAction="CallOnAction" imageMso="FilePermissionView" tag="NotInvoiced" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<button id="button_Proforma" label="Proforma" onAction="CallOnAction" imageMso="FilePrint" tag="Print_Proforma" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpPricing" label="Pricing">
+<button id="button_PartsMkt" label="Parts Marketing" onAction="CallOnAction" imageMso="OutlookGlobe" size="large" tag="Parts_Mkt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PriceMatrix" label="Price Matrix" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="Price_Matrix_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PriceMatrixList" label="Matrix Listing" onAction="CallOnAction" imageMso="FileDocumentInspect" tag="Price_Matrix_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PriceList" label="Price List" onAction="CallOnAction" imageMso="FilePrint" tag="PriceList" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpQuoting" label="Quoting">
+<button id="button_QtEntry" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Quotes"/>
+<button id="button_QtPrint" label="Print" onAction="CallOnAction" imageMso="FilePrint" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Print_Quotes"/>
+<button id="button_QtConvert" label="Convert To S/O" onAction="CallOnAction" imageMso="PublishToPdfOrEdoc" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="QuoteConvert"/>
+<button id="button_QtFollow" label="Follow-Up" onAction="CallOnAction" imageMso="CopyToPersonalTaskList" getScreentip="GetScreentip" getSupertip="GetSupertip" tag="Quotes_Follow"/>
+</group>
+
+<group id="grpCodes" label="Codes">
+<menu id="menu_Codes" size="large" label="Codes" tag="SoCodes" getImage="onGetImage">
+
+<button id="button_XCharge" label="Extra Charge" onAction="CallOnAction" imageMso="DollarSign" tag="XCharge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MiscSales" label="Miscellaneous Sales" onAction="CallOnAction" imageMso="M" tag="Misc_Codes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_TaxCodes" label="Tax" onAction="CallOnAction" imageMso="T" tag="Tax_Code_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menuSeparator id="codesMenuSep1"/>
+
+<button id="button_Rep" label="Representatives" onAction="CallOnAction" imageMso="AccessTableContacts" tag="Reps" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Salesman" label="Salesman" onAction="CallOnAction" imageMso="AccessListContacts" tag="Salesman" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Territory" label="Territory" onAction="CallOnAction" imageMso="_3DBevelPictureTopGallery" tag="Territory" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ShipMethod" label="Shipping Method" onAction="CallOnAction" tag="ShipMethod" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_StatusCode" label="Status Codes" onAction="CallOnAction" tag="OrderTypes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_SalesTypes" label="Sales Type" onAction="CallOnAction" tag="SalesTypes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_LeadCodes" label="Leads" onAction="CallOnAction" tag="Leads" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<button id="button_BusUnit" label="Business Unit" onAction="CallOnAction" getImage="onGetImage" tag="BusinessUnit" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Country" label="Country" onAction="CallOnAction" getImage="onGetImage" tag="Country" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CustGroup" label="Customer Group" onAction="CallOnAction" getImage="onGetImage" tag="CustomerGroup" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MarketSeg" label="Market Segment" onAction="CallOnAction" getImage="onGetImage" tag="MarketSegment" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menuSeparator id="codesMenuSep2"/>
+
+<button id="button_SoCalendar" label="S/O Calendar" onAction="CallOnAction" imageMso="ViewAllProposals" tag="SoCalendar" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+</menu>
+                
+</group>
+
+
+</tab>
+
+<tab id="tabFinancial" label="Financial">
+<group id="grpBGT" label="Budgeting">
+<button id="button_BGTentry" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Bgt_Entry" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_BGTInquiry" label="Inquiry" onAction="CallOnAction" imageMso="WatchWindow" size="large" tag="Bgt_Inq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpGL1" label="G/L Setup">
+<button id="button_GlCoEntry" label="Company Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="GL_CO_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlDivision" label="Division Entry" onAction="CallOnAction" imageMso="WindowSwitchWindowsMenuExcel" size="large" tag="Division" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<button id="button_GlCoPlantEntry" label="Plant Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="CoPlant" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlCoaEntry" label="COA Maint" onAction="CallOnAction" getImage="onGetImage" size="large" tag="GL_Coa_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<box id="myBoxGL1" boxStyle="vertical">
+<button id="button_GlCoaList" label="COA Listing" onAction="CallOnAction" imageMso="FilePrint" tag="GL_Coa_List" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_GlCoaInq" label="COA Inquiry" imageMso="FindDialog">
+<button id="button_GlInqAcct" label="Account" onAction="CallOnAction" tag="Gl_Inq_Acct" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlInqPer" label="Period" onAction="CallOnAction" tag="Gl_Inq_Per" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlInqYr" label="Fiscal Year" onAction="CallOnAction" tag="Gl_Inq_Yr" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlInqDetail" label="Transactions" onAction="CallOnAction" tag="Gl_Inq_Detail" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_GlMore1" label="More" imageMso="OutlineExpand">
+<button id="button_GlControl" imageMso="SaveSelectionToTableOfContentsGallery" label="Control" onAction="CallOnAction" tag="MCF_Maint_GL" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_DelCOA" imageMso="Delete" label="Delete COA" onAction="CallOnAction" tag="Delete_ChartOfAcct" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</box>
+</group>
+<group id="grpGL2" label="G/L Journals">
+<button id="button_GlJrnlEntry" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="GL_Jrnl_Entry" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlJrnlRe" label="Reoccuring" onAction="CallOnAction" tag="ReoccurringJournal" imageMso="RecurrenceEdit" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlJrnlReverse" label="Reverse Posted" onAction="CallOnAction" tag="GL_Reverse_JRNL_Entry" imageMso="DiagramReverseClassic" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlJrnlList" label="Listing" onAction="CallOnAction" tag="GL_Jrnl_Print" imageMso="FilePrint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlInvJrnl" label="Inventory" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Inv_Journal" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpGL3" label="G/L Processing">
+<button id="button_GlPost" label="Posting" onAction="CallOnAction" imageMso="FileManageMenu" size="large" tag="GL_GLT_Convert" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlClose" label="Closing" onAction="CallOnAction" imageMso="RecurrenceEditSeries" size="large" tag="GL_Close" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_Error" label="Errors Correction" size="large" imageMso="FilePrepareMenu">
+<button id="button_GlCorrect" label="Correct Transactions" onAction="CallOnAction" tag="GLT_Fix" imageMso="TableEraser" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlErrorRpt" label="Posting Error Report" onAction="CallOnAction" tag="GLT_Error_Rpt" imageMso="FilePrint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_GlYE" label="Year-End" size="large" imageMso="FormulaMoreFunctionsMenu">
+<button id="button_GlYEClose" label="Year-End Close" onAction="CallOnAction" tag="GL_YE_Close" imageMso="RecurrenceEditSeries" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlInitalize" label="Initialize New Year" onAction="CallOnAction" tag="GL_Initial_Yr" imageMso="QueryAppend" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+<group id="grpGL4" label="G/L Reporting">
+<box id="myBoxGL2" boxStyle="vertical">
+<button id="button_GlDailyJrnl" label="Daily Journal" onAction="CallOnAction" imageMso="AccessListEvents" tag="Daily_Journal" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlPeriodJrnl" label="Period Journal" onAction="CallOnAction" imageMso="AccessListCustomDatasheet" tag="Daily_Journal_Period" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>  
+<separator id="GLSeparator1"/>
+<box id="myBoxGL3" boxStyle="vertical">
+<button id="button_GlMicroTB" label="Micro Trial Balance" onAction="CallOnAction" imageMso="PivotTableLayoutShowInCompactForm" tag="GL_Det_TB_SD" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlDetTB" label="Detail Trial Balance" onAction="CallOnAction" imageMso="ColumnsDialog" tag="GL_Det_TB" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlSumTB" label="Summary Trial Balance" onAction="CallOnAction" imageMso="ViewDraftView" tag="GL_Sum_TB" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>     
+</group>
+<group id="grpGL5" label="Financial Reporting">
+<box id="myBoxGL4" boxStyle="vertical">
+<button id="button_GlObjDef" label="Object Definition" onAction="CallOnAction" imageMso="ShapesMoreShapes" tag="FS_Objects" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlObjGeneration" label="Object Generation" onAction="CallOnAction" imageMso="TableSharePointListsModifyColumnsAndSettings" tag="Object_Generation" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlNewWsDesign" label="New Work Sheet Design" onAction="CallOnAction" imageMso="FileSaveAsExcelXlsx" tag="NewFinReport" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box> 
+<box id="myBoxGL5" boxStyle="vertical">
+<button id="button_GlWsDesign" label="Work Sheet Design" onAction="CallOnAction" imageMso="FileSaveAsExcelXlsx" tag="FinancialLocation" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlWsAudit" label="Work Sheet Audit" onAction="CallOnAction" imageMso="FilePrint" tag="Financial_Report_Audit" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_GlWsAcctAudit" label="G/L Acct Audit" onAction="CallOnAction" imageMso="AccessFormDatasheet" tag="MissingFromFinSheets" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>
+</group>
+</tab>
+
+<tab id="tabInventory" label="Inventory">
+<group id="grpInv1" label="Stock Movement">
+<splitButton id="SBinv" size="large">
+<button id="button_inv1Issue" getImage="onGetImage" label="1st Issue" onAction="CallOnAction" tag="First_Issue" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_invIssue" itemSize="large">
+<button id="button_invIssue" getImage="onGetImage" label="Issue" onAction="CallOnAction" tag="Issue" getScreentip="GetScreentip" getSupertip="GetSupertip"/> 
+<button id="button_invIssueGL" getImage="onGetImage" label="Issue G/L" onAction="CallOnAction" tag="Issue_GL" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</splitButton>
+
+<splitButton id="SBinv2" size="large">
+<button id="button_inv1Issue2" getImage="onGetImage" label="P/O Receipts" onAction="CallOnAction" tag="PO_Receipts" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_invIssue2" itemSize="large">
+<button id="button_invIssue2" imageMso="AccessFormModalDialog" label="by Part Nbr" onAction="CallOnAction" tag="Po_Receipts_PartNbr" getScreentip="GetScreentip" getSupertip="GetSupertip"/> 
+<button id="button_invIssueGL2" imageMso="CreateFormWithMultipleItems" label="Entire P/O" onAction="CallOnAction" tag="PO_Receipts_Mass" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</splitButton>
+
+<button id="button_invShipments" size="large" getImage="onGetImage" label="Shipments" onAction="CallOnAction" tag="Shipments" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invProcessShip" size="large" getImage="onGetImage" label="Process Shipments" onAction="CallOnAction" tag="Process_Shipments" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invWipReceipts" size="large" getImage="onGetImage" label="WIP Receipts" onAction="CallOnAction" tag="Wip_Receipts" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menu id="menu_invTransfer" label="Transfers" size="large" imageMso="ReviewCompareTwoVersions">
+<button id="button_invTFentry" imageMso="CreateFormBlankForm" label="Entry" onAction="CallOnAction" tag="TransferDoc" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invTFprint" imageMso="FilePrint" label="Print" onAction="CallOnAction" tag="Transfer_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invTFprocess" imageMso="AccessFormWizard" label="Process" onAction="CallOnAction" tag="TransferDocUpdate" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_invMisc" label="Additional" imageMso="SmartArtChangeColorsGallery">
+<button id="button_invAdjust" label="Adjust" onAction="CallOnAction" tag="Adjust" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invScrap" label="Scrap" onAction="CallOnAction" tag="IssuedScrap" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invKits" label="Kits" onAction="CallOnAction" tag="Kits" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invUnPlanned" getImage="onGetImage" label="Unplanned Receipts" onAction="CallOnAction" tag="UnPlan_Rec" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_invRpt1" label="Reports" imageMso="CreateReport">
+<button id="button_invPoRec" label="P/O Receiving Sheet" onAction="CallOnAction" tag="PO_Sheet" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invListInv" label="List Inventory" onAction="CallOnAction" tag="List_Inv" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invListInvLoc" label="List Inventory w/Loc" onAction="CallOnAction" tag="List_Inv_Loc" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invMatlIss" label="Material Issue Log" onAction="CallOnAction" tag="MaterialIssueLog" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invSimpInv" label="Simple Open Inventory" onAction="CallOnAction" tag="BasicOpenInventory" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invStkTags" label="Stock Tags" onAction="CallOnAction" tag="StockTags" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_invMore1" label="More" imageMso="OutlineExpand">
+<button id="button_invInspect" label="Inspection" onAction="CallOnAction" tag="Inspect" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invUnProcessShip" label="Un-Process Shipments" onAction="CallOnAction" tag="UnprocessShipment" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invPostShip" label="Post-Shipments Changes" onAction="CallOnAction" tag="PostShipments" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invScrapCodes" getImage="onGetImage" label="Scrap Codes" onAction="CallOnAction" tag="Scrap_Codes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpInv2" label="Documents">
+<menu id="menu_invDelvTick" label="Delivery Tickets" getImage="onGetImage" tag="Delv_Ticket_Menu">
+<button id="button_invTickPrint" imageMso="FilePrint" label="Print" onAction="CallOnAction" tag="Delv_Ticket_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invTickRePrint" label="Re-Print" onAction="CallOnAction" tag="Delivery_Ticket_Reprint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invTickCancel" imageMso="PrintPreviewClose" label="Cancel" onAction="CallOnAction" tag="Cncl_Delv" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<button id="button_invRma" getImage="onGetImage" label="RMA (Returns)" onAction="CallOnAction" tag="PoReturns" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invRmaPrint" imageMso="FilePrint" label="RMA Print" onAction="CallOnAction" tag="Po_Print_Returns" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpInv3" label="Warehouse">
+<button id="button_invPartsStore" size="large" getImage="onGetImage" label="Parts Store" onAction="CallOnAction" tag="Parts_Store" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invWareLoc" getImage="onGetImage" label="Locations" onAction="CallOnAction" tag="Warehouse" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invLocLot" imageMso="OutlineGroup" label="Loc/Lot Conversion" onAction="CallOnAction" tag="Convert_To_LocLot" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_DelLoc" imageMso="Delete" label="Remove Empty Loc/Lots" onAction="CallOnAction" tag="Loc_Remove_Qty" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpInv4" label="Statistics">
+<button id="button_invCalcMeQty" size="large" getImage="onGetImage" label="Month-End Quantities" onAction="CallOnAction" tag="CalcMeQty" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invCalcUsage" size="large" getImage="onGetImage" label="Usage" onAction="CallOnAction" tag="CalcUsage" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpInv5" label="Inquiry / Lot Tracking">
+<button id="button_invPartInq" size="large" imageMso="WatchWindow" label="Parts Inquiry" onAction="CallOnAction" tag="Part_Inq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invMlPeg" size="large" imageMso="SmartArtOrganizationChartBoth" label="Multi-Level Pegging" onAction="CallOnAction" tag="ML_Activity" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_invLotTracker" size="large" imageMso="SmartArtOrganizationChartRightHanging" label="Lot Tracker" onAction="CallOnAction" tag="LotTracker" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_invInqMore" label="More" imageMso="OutlineExpand">
+<button id="button_LotLookup" imageMso="FindDialog" label="Loc/Lot Lookup" onAction="CallOnAction" tag="LocLotInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_LotInq" imageMso="FindDialog" label="Lot Inquiry" onAction="CallOnAction" tag="LotInquiry" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_LotCode" label="Lot Code Maint" onAction="CallOnAction" tag="LotCodeMaint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PartHist" imageMso="ReadingMode" label="Inventory History" onAction="CallOnAction" tag="Part_Hist" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_LotQty" label="Lot Quantity" onAction="CallOnAction" tag="LotQty" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpInv6" label="Accounting">
+<button id="button_invValue" size="large" imageMso="FileInternetFax" label="G/L Value" onAction="CallOnAction" tag="Stock_GL" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_invAcctRpt" label="More" imageMso="OutlineExpand">
+<button id="button_invObsRpt" imageMso="FilePrint" label="Obsolete Inventory" onAction="CallOnAction" tag="Obs_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpInv7" label="Physical Inventory">
+<menu id="menu_Cycle" label="Cycle Counting" size="large" imageMso="UseVotingButtonsMenu" itemSize="large">
+<button id="button_CycleTags" imageMso="CreateReportFromWizard" label="Generate Tags" onAction="CallOnAction" tag="CycleCountTags" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CycleSheets" imageMso="PageSetupPageDialog" label="Print Count Sheets" onAction="CallOnAction" tag="CountSheets" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CycleEntry" imageMso="TablePropertiesDialog" label="Count Entry" onAction="CallOnAction" tag="CountSheets_Entry" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CycleMissing" imageMso="FindDialog" label="Missing Tags" onAction="CallOnAction" tag="TagsMissing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CycleComp" imageMso="SourceControlShowDifferences" label="Stock Comparison" onAction="CallOnAction" tag="Stock_Comparison_CC" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CyclePreview" imageMso="ZoomPrintPreviewExcel" label="Preview" onAction="CallOnAction" tag="Preview_Update_Inventory" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menuSeparator id="myMenuSepCycle"/>
+<button id="button_CycleUpdate" imageMso="FieldChooser" label="Update" onAction="CallOnAction" tag="Update_Inventory_CC" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_Physical" label="Full Physical" size="large" imageMso="ViewWebLayoutView" itemSize="large">
+<button id="button_PhyTags" imageMso="CreateReportFromWizard" label="Generate Tags" onAction="CallOnAction" tag="AssignTags" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PhySheets" imageMso="PageSetupPageDialog" label="Print Count Sheets" onAction="CallOnAction" tag="CountSheets" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PhyEntry" imageMso="TablePropertiesDialog" label="Count Entry" onAction="CallOnAction" tag="CountSheets_Entry" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PhyMissing" imageMso="FindDialog" label="Missing Tags" onAction="CallOnAction" tag="TagsMissing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PhyComp" imageMso="SourceControlShowDifferences" label="Stock Comparison" onAction="CallOnAction" tag="Stock_Comparison_CC" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PhyPreview" imageMso="ZoomPrintPreviewExcel" label="Preview" onAction="CallOnAction" tag="Preview_Update_Inventory" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menuSeparator id="myMenuSepPhy"/>
+<button id="button_PhyUpdate" imageMso="FieldChooser" label="Update" onAction="CallOnAction" tag="Update_Inventory" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpInv8" label="Utilities">
+<button id="button_UtlIPL" getImage="onGetImage" label="IPL Clear/Reload" onAction="CallOnAction" tag="IPL_Reload" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_UtlAlloc" getImage="onGetImage" label="Rebuild Allocated" onAction="CallOnAction" tag="Utl_Rebuild_Alloc" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+</tab>
+
+<tab id="tabManufacturing" label="Manufacturing">
+<group id="grpPur1" label="Vendors">
+<button id="button_Vendors" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Vendors" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Plants" label="Plant Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Plants" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_VenInq" label="Inquiries" imageMso="FindDialog">
+<button id="button_InqVendor" label="Vendor Inquiry" onAction="CallOnAction" tag="VendorInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InqVendorPO" label="Open P/Os" onAction="CallOnAction" tag="OpenPo" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InqOutPlant" label="Outplant Inquiry" onAction="CallOnAction" tag="OutplantInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_VenRpt" label="Reports" imageMso="CreateReport">
+<button id="button_OutpRpt" label="Outplant Report" onAction="CallOnAction" tag="Outplant_Rpt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_VendList" label="Vendor Listing" onAction="CallOnAction" tag="List_Ven" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_VenMore" label="More" imageMso="OutlineExpand">
+<button id="button_VenQuote" label="Vendor Quotations" onAction="CallOnAction" tag="Vendor_Price_Quotes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_VenLate" label="Late Vendors" onAction="CallOnAction" tag="Late_Vendor" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_VenPOS" label="P/O Management" onAction="CallOnAction" tag="AllPO" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpAnal" label="Analysis">
+<button id="button_Analysis" label="Material" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Matl_Analysis" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpPur2" label="Purchase Orders">
+<button id="button_PoEntry" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Purchase" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoToStart" label="P/O To Start" onAction="CallOnAction" getImage="onGetImage" size="large" tag="PoToStart" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoToStartOutPlant" label="P/O To Start OutPlant" onAction="CallOnAction" getImage="onGetImage" size="large" tag="PoToStartOutPlant" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_BlanketReleases" label="Blanket Releases" onAction="CallOnAction" imageMso="MailMergeStartMailMergeMenu" size="large" tag="BlanketVendors" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoTickler" label="Tickler" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Po_Tickler" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_PoPrint" label="P/O Print" size="large" imageMso="FileInternetFax">
+<button id="button_PoPrint" label="Print" onAction="CallOnAction" imageMso="FilePrint" tag="Po_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoEmail" label="E-Mail" onAction="CallOnAction" imageMso="EnvelopesAndLabelsDialog" tag="Po_Print_Email" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoFax" label="Fax" onAction="CallOnAction" imageMso="FileInternetFax" tag="Po_Print_Fax" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_PoInq" label="Inquiries" imageMso="FindDialog">
+<button id="button_PoInq" label="P/O Inquiry" onAction="CallOnAction" tag="Look_Po" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PartsPricing" label="Part Pricing" imageMso="FindDialog" onAction="CallOnAction" tag="PartPricing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Prices" label="Price History" imageMso="FunctionsLookupReferenceInsertGallery" onAction="CallOnAction" tag="Prices" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Commitments" label="Commitments" onAction="CallOnAction" imageMso="Chart3DColumnChart" tag="PO_Commit_Rpt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoCodesInq" label="P/O Codes" onAction="CallOnAction" tag="PurchaseCodeInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_PoRpt" label="Reports" imageMso="CreateReport">
+<button id="button_PoToStartRpt" label="P/Os To Start" onAction="CallOnAction" tag="Po_To_Start" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoUnconfirmed" label="Unconfirmed P/Os" onAction="CallOnAction" tag="UnconfirmedPOs" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoReceiving" label="Receiving Sheet" onAction="CallOnAction" tag="Po_Sheet" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoListing" label="P/O Listing" onAction="CallOnAction" tag="List_Pod" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_PoMore" label="More" imageMso="OutlineExpand">
+<button id="button_LatePO" label="Late Parts" onAction="CallOnAction" imageMso="StartAfterPrevious" tag="Late_Purch_Part" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoClose" label="Force Close" onAction="CallOnAction" imageMso="PrintPreviewClose" tag="Close_PO" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PoCodes" label="Misc Codes" onAction="CallOnAction" imageMso="M" tag="Misc_Po_Codes" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpSF1" label="Work Orders">
+<button id="button_WoEntry" label="Entry" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Work_Orders" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoToStart" label="W/Os To Start" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Wo_To_Start" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoRelease" label="W/O Release" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Wo_Release" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_WoPrint" label="W/O Print" size="large" imageMso="FileInternetFax">
+<button id="button_PickList" label="Picklists" onAction="CallOnAction" imageMso="FilePrint" tag="Picklists" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoPrint" label="Routers" onAction="CallOnAction" imageMso="FilePrint" tag="Wo_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoCombo" label="Combination" onAction="CallOnAction" imageMso="ReviewCompareTwoVersions" tag="Wo_Print_Combo" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_WoMaint" label="Maintenance" imageMso="FileCompactAndRepairDatabase">
+<button id="button_Components" label="Components" onAction="CallOnAction" imageMso="DesignXml" tag="Allocate" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Operations" label="Operations" onAction="CallOnAction" imageMso="RelationshipsEditRelationships" tag="WO_Operations" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CopyBOM" label="Copy BOMs" onAction="CallOnAction" imageMso="AdpDiagramAddRelatedTables" tag="CopyBOMtoWO" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoHold" label="Hold W/O" onAction="CallOnAction" imageMso="PauseTimer" tag="WO_Hold" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+</menu>
+
+<menu id="menu_WoInq" label="Inquiries" imageMso="FindDialog">
+<button id="button_WoLookup" label="Lookup by Part" onAction="CallOnAction" tag="Wo_Part" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoSumInq" label="W/O Sum Inq Production" onAction="CallOnAction" tag="Wo_Sum_Inq_Prod" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+</menu>
+<menu id="menu_WoRpt" label="Reports" imageMso="CreateReport">
+<button id="button_Issues" label="Issues" onAction="CallOnAction" tag="Check_Issue" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Shorts" label="Shortages" onAction="CallOnAction" tag="Shortages" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WoToStartRpt" label="W/Os To Start" onAction="CallOnAction" tag="Wo_To_Start_Report_Expanded" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_List" label="List W/Os" onAction="CallOnAction" tag="WO_List" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<button id="button_WoInq" label="Status" onAction="CallOnAction" imageMso="WatchWindow" size="large" tag="WO_Info" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpSF2" label="Shop Scheduling">
+<button id="button_Cap" label="Shop Capacity" onAction="CallOnAction" imageMso="ShowSchedulingPage" size="large" tag="Shop_Cap" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MfgTickler" label="MFG Tickler" onAction="CallOnAction" getImage="onGetImage" size="large" tag="Mfg_Tickler" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menu id="menu_SchedRpt" label="Reports" imageMso="CreateReport">
+<button id="button_Dispatch" label="Dispatch" onAction="CallOnAction" tag="Dispatch_List" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PastDue" label="Past Due W/Os" onAction="CallOnAction" tag="Past_Due_WO" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_WoMore" label="More" imageMso="OutlineExpand">
+<button id="button_WcSched" label="Work Centers" onAction="CallOnAction" imageMso="PivotSwitchRowColumn" tag="WC_Sched" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpSF3" label="Time">
+<button id="button_Move" label="Move" onAction="CallOnAction" imageMso="ExportSharePointList" size="large" tag="Move_Emp" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Dept" label="Department" onAction="CallOnAction" imageMso="SmartArtOrganizationChartBoth" tag="Department" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Emp" label="Employees" onAction="CallOnAction" imageMso="DistributionListAddNewMember" tag="Employees" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+</tab>
+
+<tab id="tabMrpII" label="MRP II">
+<group id="grpMRP" label="Material Requirements">
+<button id="button_MrpGen" label="Generation" onAction="CallOnAction" getImage="onGetImage" size="large" tag="MRP_Gen" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MrpGenNet" label="Net Change" onAction="CallOnAction" imageMso="Consolidate" size="large" tag="MRP_Gen_NetChangeOnly" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MpReq" label="Manual Planning" onAction="CallOnAction" getImage="onGetImage" size="large" tag="PM_MRP" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_mrpReq" label="Requirements" getImage="onGetImage" tag="Menu_Requirements">
+<button id="button_MrpReqClear" label="Clear" onAction="CallOnAction" getImage="onGetImage" tag="RA_Clear_Load" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MrpReqMaint" label="Load" onAction="CallOnAction" getImage="onGetImage" tag="RA_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MrpReqValid" label="Validate" onAction="CallOnAction" getImage="onGetImage" tag="Val_RQ" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+<menu id="menu_mrpMore" label="More" imageMso="OutlineExpand">
+<button id="button_MrpDelete" label="Delete Plans" onAction="CallOnAction" imageMso="Delete" tag="Delete_Plans" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MrpCal" label="Shop Calendar" onAction="CallOnAction" imageMso="ViewAllProposals" tag="Calendar" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_MrpChkComp" label="Check Availability" onAction="CallOnAction" imageMso="TableTestValidationRules" tag="Check_Comp" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpFore" label="Forecasting">
+<button id="button_ForeMaster" label="Master Schedule" onAction="CallOnAction" getImage="onGetImage" size="large" tag="MS_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ForeSale" label="Sales" onAction="CallOnAction" getImage="onGetImage" size="large" tag="SF_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_ForeRpt" label="Reports" imageMso="CreateReport">
+<button id="button_ForeRpt" label="Forecast Projected Sales" onAction="CallOnAction" tag="MsSfProjection" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ForeMsRpt" label="Master Sched / Sales Forecast" onAction="CallOnAction" tag="MS_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ForeMsList" label="SF/MS Listing" onAction="CallOnAction" tag="MSSfList" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpPlan" label="Planning">
+<button id="button_PlanMaint" label="Plan Maint" onAction="CallOnAction" imageMso="CellsInsertDialog" size="large" tag="Plan" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PlanAllocation" label="Component Allocation" onAction="CallOnAction" imageMso="SmartArtOrganizationChartMenu" size="large" tag="PLO_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PlanRC" label="Rough Cut" onAction="CallOnAction" imageMso="MovieFromFileInsert" size="large" tag="Rough_Cut_Cap" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PlanSim" label="Simulate" onAction="CallOnAction" imageMso="CreateClassModule" size="large" tag="SimulatePlan" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+</group>
+</tab>
+
+<tab id="tabProduction" label="Production">
+<group id="grpParts" label="Parts">
+
+<splitButton id="SBpt" size="large">
+<button id="button_ptAll" imageMso="CreateTableInDesignView" label="Entry" onAction="CallOnAction" tag="Parts_All" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_pt" itemSize="large">
+<button id="button_ptEng" imageMso="CreateTableInDesignView" label="Engineering" onAction="CallOnAction" tag="Parts_Eng" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ptMfg" imageMso="ControlToolboxOutlook" label="Manufacturing" onAction="CallOnAction" tag="Parts_Mfg" getScreentip="GetScreentip" getSupertip="GetSupertip"/> 
+<button id="button_ptStore" imageMso="BlogHomePage" label="Storage" onAction="CallOnAction" tag="Parts_Store" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</splitButton>
+
+<button id="button_ptBOM" label="Bills Of Material" onAction="CallOnAction" size="large" imageMso="AdpDiagramArrangeTables" tag="BOM_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<splitButton id="SBslb" size="large">
+<button id="button_slb" getImage="onGetImage" label="Single Level Bill" onAction="CallOnAction" tag="SLB" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_slb" itemSize="large">
+<button id="button_slbPrint" imageMso="FilePrint" label="Print" onAction="CallOnAction" tag="SLB_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/> 
+<button id="button_slbWU" getImage="onGetImage" label="Where-Used" onAction="CallOnAction" tag="WU" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</splitButton>
+
+<splitButton id="SBmlb" size="large">
+<button id="button_mlb" getImage="onGetImage" label="Multi-Level Bill" onAction="CallOnAction" tag="MLB" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_mlb" itemSize="large">
+<button id="button_mlbPrint" imageMso="FilePrint" label="Print" onAction="CallOnAction" tag="MLB_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/> 
+<button id="button_mlbWU" getImage="onGetImage" label="Where-Used" onAction="CallOnAction" tag="MLWU" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</splitButton>
+
+<menu id="menu_ptMore" label="More" imageMso="OutlineExpand">
+<button id="button_Buyer" label="Buyer / Planner" onAction="CallOnAction" tag="Buyer" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_CopyBill" label="Copy Bill" onAction="CallOnAction" tag="Copy_Bill" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_BomMass" label="BOM Mass Replace" onAction="CallOnAction" tag="BOM_Mass_Replace" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_RecalcLLC" label="Recalc LLC" onAction="CallOnAction" tag="Recalc_LLC" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_InactivePart" label="Check For In-Actives" onAction="CallOnAction" tag="Inactive_Part_Validation" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_DelPart" imageMso="Delete" label="Delete Part" onAction="CallOnAction" tag="Delete_Part" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PartsType" imageMso="AccessFormDatasheet" label="Parts Type" onAction="CallOnAction" tag="PartsType" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PartChange" imageMso="PictureContrastGallery" label="Change Part Numbers" onAction="CallOnAction" tag="Part_Change" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_DivPlanning" label="Divisional Planning" onAction="CallOnAction" tag="DivPlanning" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpCapacity" label="Capacity">
+<button id="button_caWC" label="Work Centers" onAction="CallOnAction" size="large" getImage="onGetImage" tag="Work_Centers" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_caOperations" label="Operations" onAction="CallOnAction" size="large" imageMso="CreateFormInDesignView" tag="Operations" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_caRoutings" label="Routings" onAction="CallOnAction" size="large" imageMso="CreateModule" tag="Routing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+<menu id="menu_caInq" label="Inquiries" imageMso="FindDialog">
+<button id="button_RoutingInq" label="Routing Inquiry" onAction="CallOnAction" tag="Look_Routing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WcWU" label="W/C Where-Used" onAction="CallOnAction" tag="WC_WU" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_caRpt" label="Reports" imageMso="CreateReport">
+<button id="button_WcList" label="W/C List" onAction="CallOnAction" tag="List_Wc" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_RtList" label="Routing Listing" onAction="CallOnAction" tag="RoutingListing_Print" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menu_caMore" label="More" imageMso="OutlineExpand">
+<button id="button_CopyRouting" label="Copy Routing" onAction="CallOnAction" tag="Copy_ Routing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WcReplace" label="W/C Mass Replace" onAction="CallOnAction" tag="WC_Mass_Replace" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_RtComplete" label="Routing Mass Complete" onAction="CallOnAction" tag="MassCompleteRouters" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_RoutingCtrl" label="Routing Multipliers" onAction="CallOnAction" tag="Routing_Control" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_DelWC" imageMso="Delete" label="Delete W/C" onAction="CallOnAction" tag="Delete_WC" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpECO" label="Engineering Change">
+<button id="button_EcoMaint" label="Entry" onAction="CallOnAction" imageMso="PageMenu" size="large" tag="ECO_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_EcoDisp" label="Disposition" onAction="CallOnAction" getImage="onGetImage" size="large" tag="ECO_Disp" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+</tab>
+
+
+<tab id="tabSalesAnalysis" label="Sales Analysis">
+
+<group id="grpPF" label="Product Family">
+<button id="button_pfEntry" label="Entry" onAction="CallOnAction" size="large" getImage="onGetImage" tag="Prod_Fam_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_pfRpt" label="List" onAction="CallOnAction" imageMso="FilePrint" tag="Prod_Fam_Rpt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_pfSales" label="Sales" onAction="CallOnAction" imageMso="FilePrint" tag="SalesByProdFam" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpOpenOrders" label="Current Orders">
+<button id="button_coBacklog" label="Backlog" onAction="CallOnAction" size="large" getImage="onGetImage" tag="BacklogRpt" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<menu id="menu_coMore" label="More" imageMso="OutlineExpand">
+<button id="button_SalesDetail" label="Sales Detail" onAction="CallOnAction" tag="List_SOD" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_OpenSum" label="Open Orders Summary" onAction="CallOnAction" tag="OpenSalesOrderSum" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_SalesCur" label="Currency" onAction="CallOnAction" tag="SalesByCurrency" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpSaCust" label="Customers">
+<button id="button_SaCustInq" label="Inquiry" onAction="CallOnAction" size="large" imageMso="WatchWindow" tag="CustSoInq" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_SaCustSum" label="Summary" onAction="CallOnAction" size="large" imageMso="FileInternetFax" tag="Cust_Sum_Sales" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpSaProd" label="Parts">
+<button id="button_SaProdLast" label="Last Sales" onAction="CallOnAction" size="large" imageMso="WatchWindow" tag="Sell" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpSalesHist" label="Sales History">
+<box id="saBox1" boxStyle="vertical">
+<button id="button_shCust" label="Customer" onAction="CallOnAction" imageMso="C" tag="SalesHist_Cust" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_shPart" label="Part" onAction="CallOnAction" imageMso="P" tag="SalesHist_Part" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_shRep" label="Rep" onAction="CallOnAction" imageMso="R" tag="SalesHist_Rep" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_shStates" label="State" onAction="CallOnAction" imageMso="S" tag="SalesHist_State" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_shTerr" label="Territory" onAction="CallOnAction" imageMso="T" tag="SalesHist_Terr" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</box>  
+</group>
+
+<group id="grpSalesUtil" label="Utilities">
+<button id="button_SaRebuildSa" label="Rebuild S/A Table" onAction="CallOnAction" size="large" imageMso="ControlToolboxOutlook" tag="RebuildSaTable" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+</tab>
+
+<tab id="tabControl" label="Control">
+<group id="grpSetup" label="Application Setup">
+<button id="button_ApCTL" label="Set Database Location" onAction="CallOnAction" size="large" imageMso="AccessRelinkLists" tag="Change_Table_Location" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpClient" label="Client Setup">
+<button id="button_Client" label="Set Client Location" onAction="CallOnAction" size="large" imageMso="ServerConnection" tag="ClientLOcation" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Error" label="Error Log" onAction="CallOnAction" size="large" getImage="onGetImage" tag="Error_Log" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpAdmin" label="Admin">
+<button id="button_MCF" label="Master Control" onAction="CallOnAction" size="large" getImage="onGetImage" tag="Mcf_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_NextNum" label="Next Numbers" onAction="CallOnAction" size="large" getImage="onGetImage" tag="Mcf_NN" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_Security" label="Security" onAction="CallOnAction" size="large" imageMso="Lock" tag="UserSecurity" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_WgAdmin" label="Security DB" onAction="CallOnAction" size="large" imageMso="DatabasePermissionsMenu" tag="SecurityPassword" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpUser" label="User Menus">
+<button id="button_UsrMaint" label="Maintenance" onAction="CallOnAction" size="large" getImage="onGetImage" tag="UserMenuMaint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_UsrSave" label="Save" onAction="CallOnAction" size="large" getImage="onGetImage" tag="UM_Save" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_UsrRestore" label="Restore" onAction="CallOnAction" size="large" getImage="onGetImage" tag="UM_Restore" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_UsrFields" label="UserFields" onAction="CallOnAction" size="large" imageMso="CreateForm" tag="User_Field_Maint" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpArchive" label="Table Maintenance">
+<menu id="menuArchive" label="Archive" size="large" imageMso="FileManageMenu" itemSize="large">
+<button id="button_ArchiveAR" label="Accounts Receivable" onAction="CallOnAction" tag="AR_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ArchiveAP" label="Accounts Payable" onAction="CallOnAction" tag="AP_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ArchiveGlTran" label="G/L Journals" onAction="CallOnAction" tag="GL_Trans_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ArchiveGLT" label="G/L Transactions" onAction="CallOnAction" tag="GLT_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ArchiveIT" label="Inventory Transactions" onAction="CallOnAction" tag="IT_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_ArchiveSO" label="Sales Orders" onAction="CallOnAction" tag="SO_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+
+<menu id="menuPurge" label="Purge" size="large" imageMso="FormatPainter" itemSize="large">
+<button id="button_PurgeAR" label="Accounts Receivable" onAction="CallOnAction" tag="AR_Hist_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_PurgeAP" label="Accounts Payable" onAction="CallOnAction" tag="AP_Hist_Purge" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</menu>
+</group>
+
+<group id="grpYeRolls" label="Year-End">
+<menu id="menuYeRolls" label="Rolls" size="large" imageMso="PrintTitles" itemSize="large">
+<button id="button_RollCust" label="Customer / Ship-To" onAction="CallOnAction" tag="Update_CM" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_RollItem" label="Parts" onAction="CallOnAction" tag="Update_IM" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<button id="button_RollVend" label="Vendors" onAction="CallOnAction" tag="Update_Ven" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+</menu>
+</group>
+<group id="PopPartsExcelM" label="Export">
+	<button id="PopParts_ExcelM" size="large" imageMso="ExportExcel" label="Excel" onAction="CallOnActionPop" tag="Excel" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+</tab>
+
+<tab id="tabUser" label="User Menu">
+<group id="grpLegacyMenu" label="Legacy">
+<button id="button_Legacy" label="Menu" onAction="CallOnAction" size="large" getImage="onGetImage" tag="TestMainMenu" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpUserMenu" label="Menu">
+<dynamicMenu id="subUserMenu1" label="User Menu 1" size="large" imageMso="_1" getContent="CallbackGetContent"/>
+<dynamicMenu id="subUserMenu2" label="User Menu 2" size="large" imageMso="_2" getContent="CallbackGetContent"/>
+<dynamicMenu id="subUserMenu3" label="User Menu 3" size="large" imageMso="_3" getContent="CallbackGetContent"/>
+<dynamicMenu id="subUserMenu4" label="User Menu 4" size="large" imageMso="_4" getContent="CallbackGetContent"/>
+<dynamicMenu id="subUserMenu5" label="User Menu 5" size="large" imageMso="_5" getContent="CallbackGetContent"/>
+<dynamicMenu id="subUserMenu6" label="User Menu 6" size="large" imageMso="_6" getContent="CallbackGetContent"/>
+</group>
+</tab>
+
+<tab id="tabHelp" label="Help">
+<group id="grpHelp" label="Help">
+<button id="buttonHelpMrpPlus" tag="MrpPlusHelp" imageMso="FunctionsLogicalInsertGallery" label="Mrp Plus" size="large" onAction="CallOnAction"/>
+<button id="buttonHelpSupport" imageMso="MailMergeSelectRecipients" label="Support" onAction="CallOnAction" size="large" tag="Support" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+<separator id="helpSeparator1" />
+<button id="buttonHelpAbout" imageMso="MacroDefault" label="About" onAction="CallOnAction" size="large" tag="AboutBox" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+
+</group>
+</tab>
+
+<tab id="tabSystem" label="System">
+<group id="grpPrinter" label="Printer">
+	<button id="sysPrinter" size="large" imageMso="PrintDialogAccess" label="Printer" onAction="CallOnAction" tag="Printer" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+<group id="grpCompany" label="Switch Company/Division">
+	<button id="buttonCoDiv" size="large" imageMso="ReviewDisplayForReview" label="Switch" onAction="CallOnAction" tag="SwitchCurCompany" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
+</group>
+
+<group id="grpLabels" label="Labels">
+<button id="btnFreeFormlabels" tag="FreeFormlabels" imageMso="SlidesPerPageGallery" label="Free Form labels" size="large" onAction="CallOnAction"/>
+</group>
+
+</tab>
+
+</tabs>
+</ribbon>
+</customUI>

@@ -1,0 +1,3818 @@
+[
+      {
+        "key": "tabAccounting",
+        "label": "Accounting",
+        "children": [
+          {
+            "key": "grpAP",
+            "label": "A/P Entry",
+            "buttons": [
+              {
+                "key": "button_PoPaybles",
+                "label": "P/O Payables",
+                "tag": "PO_Payable",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_MiscPayables",
+                "label": "Misc Payables",
+                "tag": "Misc_Payable",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_LatePayables",
+                "label": "Late Payables",
+                "tag": "Misc_Payable_LateWo",
+                "icon": "FileMarkAsFinal",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpAP2",
+            "label": "A/P Reporting",
+            "buttons": [
+              {
+                "key": "button_ApAgeing",
+                "label": "Ageing",
+                "tag": "AP_Ageing",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Clearing",
+                "label": "Clearing",
+                "tag": "AP_Clearing",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APhist",
+                "label": "History",
+                "tag": "Look_AP",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APmisc",
+                "label": "Misc Payables",
+                "tag": "Misc_Payable_Inq",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APpo",
+                "label": "P/O Payables",
+                "tag": "PO_Payable_Inq",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APrcvr",
+                "label": "Receivers",
+                "tag": "RcvrInq",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APrcvr2",
+                "label": "Worksheet",
+                "tag": "APopenRunning",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpAP3",
+            "label": "A/P Check Processing",
+            "buttons": [
+              {
+                "key": "button_PaySel",
+                "label": "Payment Selection",
+                "tag": "Payment_Selection",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_APchkPreview",
+                "label": "Preview",
+                "tag": "Check_Preview",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APchkPrint",
+                "label": "Print",
+                "tag": "AP_Checks",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APchkReg",
+                "label": "Register",
+                "tag": "AP_Check_Reg",
+                "icon": "ReviewViewChangesInTheSourceDocument",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APhandwrite",
+                "label": "Handwrite",
+                "tag": "AP_Handwrite",
+                "icon": "ReviewEditComment",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APchkRecon",
+                "label": "Check Reconcilation",
+                "tag": "Check_Recon",
+                "icon": "ReviewAcceptChange",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APpartial",
+                "label": "Partial Payments",
+                "tag": "Partial_Payments",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APchkMaint",
+                "label": "Check Maintenance",
+                "tag": "Check_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APvoid",
+                "label": "Void Check",
+                "tag": "Void_Check",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_AP1099",
+                "label": "Vendor 1099",
+                "tag": "Ven_1099",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_APChkRpt",
+                "label": "Check Recon Rpt",
+                "tag": "Check_Recon_Rpt",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpAR1",
+            "label": "A/R Entry",
+            "buttons": [
+              {
+                "key": "button_Cash",
+                "label": "Cash Application",
+                "tag": "Cash",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_MiscCash",
+                "label": "Miscellaneous Cash",
+                "tag": "Misc_Cash",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpAR2",
+            "label": "A/R Reporting",
+            "buttons": [
+              {
+                "key": "button_CashJrl",
+                "label": "Cash Receipts Journal",
+                "tag": "Cash_Receipts",
+                "icon": "PivotTableLayoutReportLayout",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_ArStatements",
+                "label": "Statements",
+                "tag": "Statements",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ArAgeing",
+                "label": "Ageing",
+                "tag": "Ageing",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ARhist",
+                "label": "History Inquiry",
+                "tag": "Look_AR",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ARpaydist",
+                "label": "Payment Distribution",
+                "tag": "AR_PAY_DIST",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ARage",
+                "label": "Ageing Invoices",
+                "tag": "Age_AR",
+                "icon": "AccessFormWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ARpaydays",
+                "label": "Reset Avg Pay Days",
+                "tag": "Avg_Pay_Date",
+                "icon": "ProposeNewTime",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ARserv",
+                "label": "Service Charges",
+                "tag": "ServiceCharges",
+                "icon": "DollarSign",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpFC",
+            "label": "Financial Codes",
+            "buttons": [
+              {
+                "key": "button_Bank",
+                "label": "Bank",
+                "tag": "Bank",
+                "icon": "DollarSign",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Exchange",
+                "label": "Exchange",
+                "tag": "Exchange",
+                "icon": "ReviewViewChangesInTheSourceDocument",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Terms",
+                "label": "Terms",
+                "tag": "Terms",
+                "icon": "ViewAllProposals",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CrRate",
+                "label": "Credit Rating",
+                "tag": "CrRating",
+                "icon": "Lock",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabCA",
+        "label": "Cost Accounting",
+        "children": [
+          {
+            "key": "grpRollup",
+            "label": "Roll-Ups",
+            "buttons": [
+              {
+                "key": "button_CSTbottomup",
+                "label": "Bottom-Up",
+                "tag": "Bottom_Up_Cost",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_CSTbottomcum",
+                "label": "Cummulative",
+                "tag": "Bottom_Up_Cost_Cum",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_CSTrouting",
+                "label": "Routing",
+                "tag": "Routing_Rollup",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpCOST",
+            "label": "Accounting",
+            "buttons": [
+              {
+                "key": "button_CSTpartsacct",
+                "label": "Parts",
+                "tag": "Parts_Acct",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_CSTpartsacctinq",
+                "label": "Inquiry",
+                "tag": "Parts_Acct_Cum",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_CSTroutingcst",
+                "label": "Routing",
+                "tag": "Routing_Cost",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CSTcostsrpt",
+                "label": "Inventory Costs",
+                "tag": "Inv_Cost",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CSTstore",
+                "label": "Store Month End Value",
+                "tag": "SaveAcctVal",
+                "icon": "FileSave",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CSTiavgcost",
+                "label": "Initialize Avg Cost",
+                "tag": "InitializeAverageCost",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpCSTwo",
+            "label": "Work Orders",
+            "buttons": [
+              {
+                "key": "button_CSTwoclose",
+                "label": "Close",
+                "tag": "WOCLS",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_CSTwosum",
+                "label": "Summarization",
+                "tag": "Closed_Wo_Sum",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_CSTfc",
+                "label": "Force Complete",
+                "tag": "Close_Wo",
+                "icon": "TableIndexes",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CSTrev",
+                "label": "Reverse Summarization",
+                "tag": "RevWoSum",
+                "icon": "DiagramReverseClassic",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpCSTrpt",
+            "label": "Work Order Reporting",
+            "buttons": [
+              {
+                "key": "button_SumInq",
+                "label": "Summary Inquiry",
+                "tag": "WO_Sum_Inq",
+                "icon": "PropertySheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WOcosts",
+                "label": "Costs",
+                "tag": "WO_Costs",
+                "icon": "DollarSign",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Wostats",
+                "label": "Stats",
+                "tag": "Costs",
+                "icon": "DatabaseEncodeDecode",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WIPclearing",
+                "label": "Clearing",
+                "tag": "WIP_Clearing",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WIPValue",
+                "label": "Value",
+                "tag": "WIP_Value",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GLbal",
+                "label": "G/L Balancing",
+                "tag": "NewWoCosting",
+                "icon": "IndexMarkEntry",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoAudit",
+                "label": "Audit",
+                "tag": "Audit_WO",
+                "icon": "ReviewAcceptChange",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpTC",
+            "label": "Time Cards",
+            "buttons": [
+              {
+                "key": "button_TCentry",
+                "label": "Entry",
+                "tag": "Time_Card_Entry",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_TCproof",
+                "label": "Proof",
+                "tag": "TimeCardReport",
+                "icon": "FileDocumentInspect",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCupdate",
+                "label": "Update",
+                "tag": "TimeCard_Update",
+                "icon": "AccessFormWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCreverse",
+                "label": "Reversal",
+                "tag": "Timecard_Reversal",
+                "icon": "DiagramReverseClassic",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCinquiry",
+                "label": "Inquiry",
+                "tag": "TimeInquiry",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_TCpostrpt",
+                "label": "Posted Report",
+                "tag": "TimeCardPostReport",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCindlabsum",
+                "label": "Indirect Labor Sum",
+                "tag": "IndirectLabSumRpt",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCweeklytime",
+                "label": "Weekly Time",
+                "tag": "WeeklyTime",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCindirect",
+                "label": "Indirect",
+                "tag": "Indirect_Codes",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TCratetype",
+                "label": "Rate Type",
+                "tag": "RateTypes",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabCustomerService",
+        "label": "Customer Service",
+        "children": [
+          {
+            "key": "grpCustomers",
+            "label": "Customers",
+            "buttons": [
+              {
+                "key": "button_Customers",
+                "label": "Add/Maintain",
+                "tag": "Customers",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_ShipTo",
+                "label": "Ship To",
+                "tag": "ShipTo",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_Credit",
+                "label": "Credit - S/O",
+                "tag": "Credit",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_SetCredit",
+                "label": "Set Credit Limit",
+                "tag": "Set_Credit",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CustInq",
+                "label": "Inquiry",
+                "tag": "CustInq",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CustPriceQuotes",
+                "label": "Price Quotations",
+                "tag": "Cust_Price_Quotes",
+                "icon": "DollarSign",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CUstList",
+                "label": "Cust Listing",
+                "tag": "List_Cust",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ShipToList",
+                "label": "Ship-To Listing",
+                "tag": "List_Shipto",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_DelCust",
+                "label": "Delete",
+                "tag": "Delete_Customer",
+                "icon": "Delete",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "myLauncherCustomers",
+                "label": "",
+                "tag": "",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSalesOrders",
+            "label": "Sales Orders",
+            "buttons": [
+              {
+                "key": "button_Sales",
+                "label": "Sales",
+                "tag": "Sales",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_SalesInq",
+                "label": "Inquiry",
+                "tag": "Sales_Inq",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_AckPrint",
+                "label": "Print",
+                "tag": "Print_Ack",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_AckEmail",
+                "label": "E-Mail",
+                "tag": "Print_Ack_Email",
+                "icon": "EnvelopesAndLabelsDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_AckFax",
+                "label": "Fax",
+                "tag": "Print_Ack_Fax",
+                "icon": "FileInternetFax",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ShipGen",
+                "label": "Generate Ship Lists",
+                "tag": "Shiplist_Gen",
+                "icon": "CreateReportFromWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ShipPrint",
+                "label": "Print Ship Lists",
+                "tag": "Shiplist_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ShipCancel",
+                "label": "Cancel Ship Lists",
+                "tag": "Cncl_Ship",
+                "icon": "DeclineInvitation",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Commit",
+                "label": "Commit Sales Orders",
+                "tag": "CommitOrders",
+                "icon": "AcceptInvitation",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_OnTime",
+                "label": "On Time Shipping Report",
+                "tag": "OnTimeShipments",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_LotHist",
+                "label": "Lot History",
+                "tag": "LotHistory",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpNotifications",
+            "label": "Notifications",
+            "buttons": [
+              {
+                "key": "button_ShipNote",
+                "label": "Shipping",
+                "tag": "ShipNote",
+                "icon": "ViewWebLayoutView",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInvoicing",
+            "label": "Invoicing",
+            "buttons": [
+              {
+                "key": "button_CMentry",
+                "label": "Credit/Debit Memos",
+                "tag": "Credit_Memo",
+                "icon": "TableDrawTable",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CMprint",
+                "label": "Credit/Debit Print",
+                "tag": "Credit_Memo_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvAudit",
+                "label": "Audit",
+                "tag": "Pre-Invoice_Gen",
+                "icon": "AcceptInvitation",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvGen",
+                "label": "Generation",
+                "tag": "Invoice_Gen",
+                "icon": "CreateReportFromWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvPrint",
+                "label": "Print",
+                "tag": "Invoice_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvEmail",
+                "label": "E-Mail",
+                "tag": "Invoice_Print_Email",
+                "icon": "EnvelopesAndLabelsDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvFax",
+                "label": "Fax",
+                "tag": "Invoice_Print_Fax",
+                "icon": "FileInternetFax",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvReg",
+                "label": "Register",
+                "tag": "InvoiceRegister",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PreInvSched",
+                "label": "Scheduling",
+                "tag": "PI_Enter",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PreInvList",
+                "label": "Listing",
+                "tag": "PI_List",
+                "icon": "FileDocumentInspect",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PreInvGen",
+                "label": "Generation",
+                "tag": "PI_Invoice_Gen",
+                "icon": "CreateReportFromWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PreInvPrint",
+                "label": "Print",
+                "tag": "PI_Invoice_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvCosting",
+                "label": "Invoice Costing",
+                "tag": "Invoice_Costing_Report",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MthInvReg",
+                "label": "Monthly Invoice Register",
+                "tag": "Monthly_Invoice_Register",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_SalesTax",
+                "label": "Sales Tax",
+                "tag": "Sales_Tax_Report",
+                "icon": "T",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CorrectInvoices",
+                "label": "Correct Manual Invoice Nbrs",
+                "tag": "Correct_Manual_Invoice_Nbr",
+                "icon": "InkEraseMode",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InvoiceMaint",
+                "label": "Invoice Maintenace",
+                "tag": "InvoiceMaint",
+                "icon": "InkEraseMode",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_UnInvoiced",
+                "label": "Orders Not Invoiced",
+                "tag": "NotInvoiced",
+                "icon": "FilePermissionView",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Proforma",
+                "label": "Proforma",
+                "tag": "Print_Proforma",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpPricing",
+            "label": "Pricing",
+            "buttons": [
+              {
+                "key": "button_PartsMkt",
+                "label": "Parts Marketing",
+                "tag": "Parts_Mkt",
+                "icon": "OutlookGlobe",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PriceMatrix",
+                "label": "Price Matrix",
+                "tag": "Price_Matrix_Maint",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PriceMatrixList",
+                "label": "Matrix Listing",
+                "tag": "Price_Matrix_Print",
+                "icon": "FileDocumentInspect",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PriceList",
+                "label": "Price List",
+                "tag": "PriceList",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpQuoting",
+            "label": "Quoting",
+            "buttons": [
+              {
+                "key": "button_QtEntry",
+                "label": "Entry",
+                "tag": "Quotes",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_QtPrint",
+                "label": "Print",
+                "tag": "Print_Quotes",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_QtConvert",
+                "label": "Convert To S/O",
+                "tag": "QuoteConvert",
+                "icon": "PublishToPdfOrEdoc",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_QtFollow",
+                "label": "Follow-Up",
+                "tag": "Quotes_Follow",
+                "icon": "CopyToPersonalTaskList",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpCodes",
+            "label": "Codes",
+            "buttons": [
+              {
+                "key": "button_XCharge",
+                "label": "Extra Charge",
+                "tag": "XCharge",
+                "icon": "DollarSign",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MiscSales",
+                "label": "Miscellaneous Sales",
+                "tag": "Misc_Codes",
+                "icon": "M",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_TaxCodes",
+                "label": "Tax",
+                "tag": "Tax_Code_Maint",
+                "icon": "T",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Rep",
+                "label": "Representatives",
+                "tag": "Reps",
+                "icon": "AccessTableContacts",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Salesman",
+                "label": "Salesman",
+                "tag": "Salesman",
+                "icon": "AccessListContacts",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Territory",
+                "label": "Territory",
+                "tag": "Territory",
+                "icon": "_3DBevelPictureTopGallery",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ShipMethod",
+                "label": "Shipping Method",
+                "tag": "ShipMethod",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_StatusCode",
+                "label": "Status Codes",
+                "tag": "OrderTypes",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_SalesTypes",
+                "label": "Sales Type",
+                "tag": "SalesTypes",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_LeadCodes",
+                "label": "Leads",
+                "tag": "Leads",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_BusUnit",
+                "label": "Business Unit",
+                "tag": "BusinessUnit",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Country",
+                "label": "Country",
+                "tag": "Country",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CustGroup",
+                "label": "Customer Group",
+                "tag": "CustomerGroup",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MarketSeg",
+                "label": "Market Segment",
+                "tag": "MarketSegment",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_SoCalendar",
+                "label": "S/O Calendar",
+                "tag": "SoCalendar",
+                "icon": "ViewAllProposals",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabFinancial",
+        "label": "Financial",
+        "children": [
+          {
+            "key": "grpBGT",
+            "label": "Budgeting",
+            "buttons": [
+              {
+                "key": "button_BGTentry",
+                "label": "Entry",
+                "tag": "Bgt_Entry",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_BGTInquiry",
+                "label": "Inquiry",
+                "tag": "Bgt_Inq",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpGL1",
+            "label": "G/L Setup",
+            "buttons": [
+              {
+                "key": "button_GlCoEntry",
+                "label": "Company Entry",
+                "tag": "GL_CO_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlDivision",
+                "label": "Division Entry",
+                "tag": "Division",
+                "icon": "WindowSwitchWindowsMenuExcel",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlCoPlantEntry",
+                "label": "Plant Entry",
+                "tag": "CoPlant",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlCoaEntry",
+                "label": "COA Maint",
+                "tag": "GL_Coa_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlCoaList",
+                "label": "COA Listing",
+                "tag": "GL_Coa_List",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlInqAcct",
+                "label": "Account",
+                "tag": "Gl_Inq_Acct",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlInqPer",
+                "label": "Period",
+                "tag": "Gl_Inq_Per",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlInqYr",
+                "label": "Fiscal Year",
+                "tag": "Gl_Inq_Yr",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlInqDetail",
+                "label": "Transactions",
+                "tag": "Gl_Inq_Detail",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlControl",
+                "label": "Control",
+                "tag": "MCF_Maint_GL",
+                "icon": "SaveSelectionToTableOfContentsGallery",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_DelCOA",
+                "label": "Delete COA",
+                "tag": "Delete_ChartOfAcct",
+                "icon": "Delete",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpGL2",
+            "label": "G/L Journals",
+            "buttons": [
+              {
+                "key": "button_GlJrnlEntry",
+                "label": "Entry",
+                "tag": "GL_Jrnl_Entry",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlJrnlRe",
+                "label": "Reoccuring",
+                "tag": "ReoccurringJournal",
+                "icon": "RecurrenceEdit",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlJrnlReverse",
+                "label": "Reverse Posted",
+                "tag": "GL_Reverse_JRNL_Entry",
+                "icon": "DiagramReverseClassic",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlJrnlList",
+                "label": "Listing",
+                "tag": "GL_Jrnl_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlInvJrnl",
+                "label": "Inventory",
+                "tag": "Inv_Journal",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpGL3",
+            "label": "G/L Processing",
+            "buttons": [
+              {
+                "key": "button_GlPost",
+                "label": "Posting",
+                "tag": "GL_GLT_Convert",
+                "icon": "FileManageMenu",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlClose",
+                "label": "Closing",
+                "tag": "GL_Close",
+                "icon": "RecurrenceEditSeries",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_GlCorrect",
+                "label": "Correct Transactions",
+                "tag": "GLT_Fix",
+                "icon": "TableEraser",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlErrorRpt",
+                "label": "Posting Error Report",
+                "tag": "GLT_Error_Rpt",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlYEClose",
+                "label": "Year-End Close",
+                "tag": "GL_YE_Close",
+                "icon": "RecurrenceEditSeries",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlInitalize",
+                "label": "Initialize New Year",
+                "tag": "GL_Initial_Yr",
+                "icon": "QueryAppend",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpGL4",
+            "label": "G/L Reporting",
+            "buttons": [
+              {
+                "key": "button_GlDailyJrnl",
+                "label": "Daily Journal",
+                "tag": "Daily_Journal",
+                "icon": "AccessListEvents",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlPeriodJrnl",
+                "label": "Period Journal",
+                "tag": "Daily_Journal_Period",
+                "icon": "AccessListCustomDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlMicroTB",
+                "label": "Micro Trial Balance",
+                "tag": "GL_Det_TB_SD",
+                "icon": "PivotTableLayoutShowInCompactForm",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlDetTB",
+                "label": "Detail Trial Balance",
+                "tag": "GL_Det_TB",
+                "icon": "ColumnsDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlSumTB",
+                "label": "Summary Trial Balance",
+                "tag": "GL_Sum_TB",
+                "icon": "ViewDraftView",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpGL5",
+            "label": "Financial Reporting",
+            "buttons": [
+              {
+                "key": "button_GlObjDef",
+                "label": "Object Definition",
+                "tag": "FS_Objects",
+                "icon": "ShapesMoreShapes",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlObjGeneration",
+                "label": "Object Generation",
+                "tag": "Object_Generation",
+                "icon": "TableSharePointListsModifyColumnsAndSettings",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlNewWsDesign",
+                "label": "New Work Sheet Design",
+                "tag": "NewFinReport",
+                "icon": "FileSaveAsExcelXlsx",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlWsDesign",
+                "label": "Work Sheet Design",
+                "tag": "FinancialLocation",
+                "icon": "FileSaveAsExcelXlsx",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlWsAudit",
+                "label": "Work Sheet Audit",
+                "tag": "Financial_Report_Audit",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_GlWsAcctAudit",
+                "label": "G/L Acct Audit",
+                "tag": "MissingFromFinSheets",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabInventory",
+        "label": "Inventory",
+        "children": [
+          {
+            "key": "grpInv1",
+            "label": "Stock Movement",
+            "buttons": [
+              {
+                "key": "button_inv1Issue",
+                "label": "1st Issue",
+                "tag": "First_Issue",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invIssue",
+                "label": "Issue",
+                "tag": "Issue",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invIssueGL",
+                "label": "Issue G/L",
+                "tag": "Issue_GL",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_inv1Issue2",
+                "label": "P/O Receipts",
+                "tag": "PO_Receipts",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invIssue2",
+                "label": "by Part Nbr",
+                "tag": "Po_Receipts_PartNbr",
+                "icon": "AccessFormModalDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invIssueGL2",
+                "label": "Entire P/O",
+                "tag": "PO_Receipts_Mass",
+                "icon": "CreateFormWithMultipleItems",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invShipments",
+                "label": "Shipments",
+                "tag": "Shipments",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invProcessShip",
+                "label": "Process Shipments",
+                "tag": "Process_Shipments",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invWipReceipts",
+                "label": "WIP Receipts",
+                "tag": "Wip_Receipts",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invTFentry",
+                "label": "Entry",
+                "tag": "TransferDoc",
+                "icon": "CreateFormBlankForm",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invTFprint",
+                "label": "Print",
+                "tag": "Transfer_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invTFprocess",
+                "label": "Process",
+                "tag": "TransferDocUpdate",
+                "icon": "AccessFormWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invAdjust",
+                "label": "Adjust",
+                "tag": "Adjust",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invScrap",
+                "label": "Scrap",
+                "tag": "IssuedScrap",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invKits",
+                "label": "Kits",
+                "tag": "Kits",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invUnPlanned",
+                "label": "Unplanned Receipts",
+                "tag": "UnPlan_Rec",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invPoRec",
+                "label": "P/O Receiving Sheet",
+                "tag": "PO_Sheet",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invListInv",
+                "label": "List Inventory",
+                "tag": "List_Inv",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invListInvLoc",
+                "label": "List Inventory w/Loc",
+                "tag": "List_Inv_Loc",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invMatlIss",
+                "label": "Material Issue Log",
+                "tag": "MaterialIssueLog",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invSimpInv",
+                "label": "Simple Open Inventory",
+                "tag": "BasicOpenInventory",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invStkTags",
+                "label": "Stock Tags",
+                "tag": "StockTags",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invInspect",
+                "label": "Inspection",
+                "tag": "Inspect",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invUnProcessShip",
+                "label": "Un-Process Shipments",
+                "tag": "UnprocessShipment",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invPostShip",
+                "label": "Post-Shipments Changes",
+                "tag": "PostShipments",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invScrapCodes",
+                "label": "Scrap Codes",
+                "tag": "Scrap_Codes",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv2",
+            "label": "Documents",
+            "buttons": [
+              {
+                "key": "button_invTickPrint",
+                "label": "Print",
+                "tag": "Delv_Ticket_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invTickRePrint",
+                "label": "Re-Print",
+                "tag": "Delivery_Ticket_Reprint",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invTickCancel",
+                "label": "Cancel",
+                "tag": "Cncl_Delv",
+                "icon": "PrintPreviewClose",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invRma",
+                "label": "RMA (Returns)",
+                "tag": "PoReturns",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invRmaPrint",
+                "label": "RMA Print",
+                "tag": "Po_Print_Returns",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv3",
+            "label": "Warehouse",
+            "buttons": [
+              {
+                "key": "button_invPartsStore",
+                "label": "Parts Store",
+                "tag": "Parts_Store",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invWareLoc",
+                "label": "Locations",
+                "tag": "Warehouse",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_invLocLot",
+                "label": "Loc/Lot Conversion",
+                "tag": "Convert_To_LocLot",
+                "icon": "OutlineGroup",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_DelLoc",
+                "label": "Remove Empty Loc/Lots",
+                "tag": "Loc_Remove_Qty",
+                "icon": "Delete",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv4",
+            "label": "Statistics",
+            "buttons": [
+              {
+                "key": "button_invCalcMeQty",
+                "label": "Month-End Quantities",
+                "tag": "CalcMeQty",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invCalcUsage",
+                "label": "Usage",
+                "tag": "CalcUsage",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv5",
+            "label": "Inquiry / Lot Tracking",
+            "buttons": [
+              {
+                "key": "button_invPartInq",
+                "label": "Parts Inquiry",
+                "tag": "Part_Inq",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invMlPeg",
+                "label": "Multi-Level Pegging",
+                "tag": "ML_Activity",
+                "icon": "SmartArtOrganizationChartBoth",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invLotTracker",
+                "label": "Lot Tracker",
+                "tag": "LotTracker",
+                "icon": "SmartArtOrganizationChartRightHanging",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_LotLookup",
+                "label": "Loc/Lot Lookup",
+                "tag": "LocLotInq",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_LotInq",
+                "label": "Lot Inquiry",
+                "tag": "LotInquiry",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_LotCode",
+                "label": "Lot Code Maint",
+                "tag": "LotCodeMaint",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PartHist",
+                "label": "Inventory History",
+                "tag": "Part_Hist",
+                "icon": "ReadingMode",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_LotQty",
+                "label": "Lot Quantity",
+                "tag": "LotQty",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv6",
+            "label": "Accounting",
+            "buttons": [
+              {
+                "key": "button_invValue",
+                "label": "G/L Value",
+                "tag": "Stock_GL",
+                "icon": "FileInternetFax",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_invObsRpt",
+                "label": "Obsolete Inventory",
+                "tag": "Obs_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv7",
+            "label": "Physical Inventory",
+            "buttons": [
+              {
+                "key": "button_CycleTags",
+                "label": "Generate Tags",
+                "tag": "CycleCountTags",
+                "icon": "CreateReportFromWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CycleSheets",
+                "label": "Print Count Sheets",
+                "tag": "CountSheets",
+                "icon": "PageSetupPageDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CycleEntry",
+                "label": "Count Entry",
+                "tag": "CountSheets_Entry",
+                "icon": "TablePropertiesDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CycleMissing",
+                "label": "Missing Tags",
+                "tag": "TagsMissing",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CycleComp",
+                "label": "Stock Comparison",
+                "tag": "Stock_Comparison_CC",
+                "icon": "SourceControlShowDifferences",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CyclePreview",
+                "label": "Preview",
+                "tag": "Preview_Update_Inventory",
+                "icon": "ZoomPrintPreviewExcel",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CycleUpdate",
+                "label": "Update",
+                "tag": "Update_Inventory_CC",
+                "icon": "FieldChooser",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhyTags",
+                "label": "Generate Tags",
+                "tag": "AssignTags",
+                "icon": "CreateReportFromWizard",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhySheets",
+                "label": "Print Count Sheets",
+                "tag": "CountSheets",
+                "icon": "PageSetupPageDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhyEntry",
+                "label": "Count Entry",
+                "tag": "CountSheets_Entry",
+                "icon": "TablePropertiesDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhyMissing",
+                "label": "Missing Tags",
+                "tag": "TagsMissing",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhyComp",
+                "label": "Stock Comparison",
+                "tag": "Stock_Comparison_CC",
+                "icon": "SourceControlShowDifferences",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhyPreview",
+                "label": "Preview",
+                "tag": "Preview_Update_Inventory",
+                "icon": "ZoomPrintPreviewExcel",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PhyUpdate",
+                "label": "Update",
+                "tag": "Update_Inventory",
+                "icon": "FieldChooser",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpInv8",
+            "label": "Utilities",
+            "buttons": [
+              {
+                "key": "button_UtlIPL",
+                "label": "IPL Clear/Reload",
+                "tag": "IPL_Reload",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_UtlAlloc",
+                "label": "Rebuild Allocated",
+                "tag": "Utl_Rebuild_Alloc",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabManufacturing",
+        "label": "Manufacturing",
+        "children": [
+          {
+            "key": "grpPur1",
+            "label": "Vendors",
+            "buttons": [
+              {
+                "key": "button_Vendors",
+                "label": "Entry",
+                "tag": "Vendors",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_Plants",
+                "label": "Plant Entry",
+                "tag": "Plants",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_InqVendor",
+                "label": "Vendor Inquiry",
+                "tag": "VendorInq",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InqVendorPO",
+                "label": "Open P/Os",
+                "tag": "OpenPo",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InqOutPlant",
+                "label": "Outplant Inquiry",
+                "tag": "OutplantInq",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_OutpRpt",
+                "label": "Outplant Report",
+                "tag": "Outplant_Rpt",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_VendList",
+                "label": "Vendor Listing",
+                "tag": "List_Ven",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_VenQuote",
+                "label": "Vendor Quotations",
+                "tag": "Vendor_Price_Quotes",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_VenLate",
+                "label": "Late Vendors",
+                "tag": "Late_Vendor",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_VenPOS",
+                "label": "P/O Management",
+                "tag": "AllPO",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpAnal",
+            "label": "Analysis",
+            "buttons": [
+              {
+                "key": "button_Analysis",
+                "label": "Material",
+                "tag": "Matl_Analysis",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpPur2",
+            "label": "Purchase Orders",
+            "buttons": [
+              {
+                "key": "button_PoEntry",
+                "label": "Entry",
+                "tag": "Purchase",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PoToStart",
+                "label": "P/O To Start",
+                "tag": "PoToStart",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PoToStartOutPlant",
+                "label": "P/O To Start OutPlant",
+                "tag": "PoToStartOutPlant",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_BlanketReleases",
+                "label": "Blanket Releases",
+                "tag": "BlanketVendors",
+                "icon": "MailMergeStartMailMergeMenu",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PoTickler",
+                "label": "Tickler",
+                "tag": "Po_Tickler",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PoPrint",
+                "label": "Print",
+                "tag": "Po_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoEmail",
+                "label": "E-Mail",
+                "tag": "Po_Print_Email",
+                "icon": "EnvelopesAndLabelsDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoFax",
+                "label": "Fax",
+                "tag": "Po_Print_Fax",
+                "icon": "FileInternetFax",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoInq",
+                "label": "P/O Inquiry",
+                "tag": "Look_Po",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PartsPricing",
+                "label": "Part Pricing",
+                "tag": "PartPricing",
+                "icon": "FindDialog",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Prices",
+                "label": "Price History",
+                "tag": "Prices",
+                "icon": "FunctionsLookupReferenceInsertGallery",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Commitments",
+                "label": "Commitments",
+                "tag": "PO_Commit_Rpt",
+                "icon": "Chart3DColumnChart",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoCodesInq",
+                "label": "P/O Codes",
+                "tag": "PurchaseCodeInq",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoToStartRpt",
+                "label": "P/Os To Start",
+                "tag": "Po_To_Start",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoUnconfirmed",
+                "label": "Unconfirmed P/Os",
+                "tag": "UnconfirmedPOs",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoReceiving",
+                "label": "Receiving Sheet",
+                "tag": "Po_Sheet",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoListing",
+                "label": "P/O Listing",
+                "tag": "List_Pod",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_LatePO",
+                "label": "Late Parts",
+                "tag": "Late_Purch_Part",
+                "icon": "StartAfterPrevious",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoClose",
+                "label": "Force Close",
+                "tag": "Close_PO",
+                "icon": "PrintPreviewClose",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PoCodes",
+                "label": "Misc Codes",
+                "tag": "Misc_Po_Codes",
+                "icon": "M",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSF1",
+            "label": "Work Orders",
+            "buttons": [
+              {
+                "key": "button_WoEntry",
+                "label": "Entry",
+                "tag": "Work_Orders",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_WoToStart",
+                "label": "W/Os To Start",
+                "tag": "Wo_To_Start",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_WoRelease",
+                "label": "W/O Release",
+                "tag": "Wo_Release",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PickList",
+                "label": "Picklists",
+                "tag": "Picklists",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoPrint",
+                "label": "Routers",
+                "tag": "Wo_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoCombo",
+                "label": "Combination",
+                "tag": "Wo_Print_Combo",
+                "icon": "ReviewCompareTwoVersions",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Components",
+                "label": "Components",
+                "tag": "Allocate",
+                "icon": "DesignXml",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Operations",
+                "label": "Operations",
+                "tag": "WO_Operations",
+                "icon": "RelationshipsEditRelationships",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CopyBOM",
+                "label": "Copy BOMs",
+                "tag": "CopyBOMtoWO",
+                "icon": "AdpDiagramAddRelatedTables",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoHold",
+                "label": "Hold W/O",
+                "tag": "WO_Hold",
+                "icon": "PauseTimer",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoLookup",
+                "label": "Lookup by Part",
+                "tag": "Wo_Part",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoSumInq",
+                "label": "W/O Sum Inq Production",
+                "tag": "Wo_Sum_Inq_Prod",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Issues",
+                "label": "Issues",
+                "tag": "Check_Issue",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Shorts",
+                "label": "Shortages",
+                "tag": "Shortages",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoToStartRpt",
+                "label": "W/Os To Start",
+                "tag": "Wo_To_Start_Report_Expanded",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_List",
+                "label": "List W/Os",
+                "tag": "WO_List",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WoInq",
+                "label": "Status",
+                "tag": "WO_Info",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSF2",
+            "label": "Shop Scheduling",
+            "buttons": [
+              {
+                "key": "button_Cap",
+                "label": "Shop Capacity",
+                "tag": "Shop_Cap",
+                "icon": "ShowSchedulingPage",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_MfgTickler",
+                "label": "MFG Tickler",
+                "tag": "Mfg_Tickler",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_Dispatch",
+                "label": "Dispatch",
+                "tag": "Dispatch_List",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PastDue",
+                "label": "Past Due W/Os",
+                "tag": "Past_Due_WO",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WcSched",
+                "label": "Work Centers",
+                "tag": "WC_Sched",
+                "icon": "PivotSwitchRowColumn",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSF3",
+            "label": "Time",
+            "buttons": [
+              {
+                "key": "button_Move",
+                "label": "Move",
+                "tag": "Move_Emp",
+                "icon": "ExportSharePointList",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_Dept",
+                "label": "Department",
+                "tag": "Department",
+                "icon": "SmartArtOrganizationChartBoth",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Emp",
+                "label": "Employees",
+                "tag": "Employees",
+                "icon": "DistributionListAddNewMember",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabMrpII",
+        "label": "MRP II",
+        "children": [
+          {
+            "key": "grpMRP",
+            "label": "Material Requirements",
+            "buttons": [
+              {
+                "key": "button_MrpGen",
+                "label": "Generation",
+                "tag": "MRP_Gen",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_MrpGenNet",
+                "label": "Net Change",
+                "tag": "MRP_Gen_NetChangeOnly",
+                "icon": "Consolidate",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_MpReq",
+                "label": "Manual Planning",
+                "tag": "PM_MRP",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_MrpReqClear",
+                "label": "Clear",
+                "tag": "RA_Clear_Load",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MrpReqMaint",
+                "label": "Load",
+                "tag": "RA_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MrpReqValid",
+                "label": "Validate",
+                "tag": "Val_RQ",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MrpDelete",
+                "label": "Delete Plans",
+                "tag": "Delete_Plans",
+                "icon": "Delete",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MrpCal",
+                "label": "Shop Calendar",
+                "tag": "Calendar",
+                "icon": "ViewAllProposals",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_MrpChkComp",
+                "label": "Check Availability",
+                "tag": "Check_Comp",
+                "icon": "TableTestValidationRules",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpFore",
+            "label": "Forecasting",
+            "buttons": [
+              {
+                "key": "button_ForeMaster",
+                "label": "Master Schedule",
+                "tag": "MS_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_ForeSale",
+                "label": "Sales",
+                "tag": "SF_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_ForeRpt",
+                "label": "Forecast Projected Sales",
+                "tag": "MsSfProjection",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ForeMsRpt",
+                "label": "Master Sched / Sales Forecast",
+                "tag": "MS_Print",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ForeMsList",
+                "label": "SF/MS Listing",
+                "tag": "MSSfList",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpPlan",
+            "label": "Planning",
+            "buttons": [
+              {
+                "key": "button_PlanMaint",
+                "label": "Plan Maint",
+                "tag": "Plan",
+                "icon": "CellsInsertDialog",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PlanAllocation",
+                "label": "Component Allocation",
+                "tag": "PLO_Maint",
+                "icon": "SmartArtOrganizationChartMenu",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PlanRC",
+                "label": "Rough Cut",
+                "tag": "Rough_Cut_Cap",
+                "icon": "MovieFromFileInsert",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_PlanSim",
+                "label": "Simulate",
+                "tag": "SimulatePlan",
+                "icon": "CreateClassModule",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabProduction",
+        "label": "Production",
+        "children": [
+          {
+            "key": "grpParts",
+            "label": "Parts",
+            "buttons": [
+              {
+                "key": "button_ptAll",
+                "label": "Entry",
+                "tag": "Parts_All",
+                "icon": "CreateTableInDesignView",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ptEng",
+                "label": "Engineering",
+                "tag": "Parts_Eng",
+                "icon": "CreateTableInDesignView",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ptMfg",
+                "label": "Manufacturing",
+                "tag": "Parts_Mfg",
+                "icon": "ControlToolboxOutlook",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ptStore",
+                "label": "Storage",
+                "tag": "Parts_Store",
+                "icon": "BlogHomePage",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ptBOM",
+                "label": "Bills Of Material",
+                "tag": "BOM_Maint",
+                "icon": "AdpDiagramArrangeTables",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_slb",
+                "label": "Single Level Bill",
+                "tag": "SLB",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_slbPrint",
+                "label": "Print",
+                "tag": "SLB_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_slbWU",
+                "label": "Where-Used",
+                "tag": "WU",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_mlb",
+                "label": "Multi-Level Bill",
+                "tag": "MLB",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_mlbPrint",
+                "label": "Print",
+                "tag": "MLB_Print",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_mlbWU",
+                "label": "Where-Used",
+                "tag": "MLWU",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_Buyer",
+                "label": "Buyer / Planner",
+                "tag": "Buyer",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CopyBill",
+                "label": "Copy Bill",
+                "tag": "Copy_Bill",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_BomMass",
+                "label": "BOM Mass Replace",
+                "tag": "BOM_Mass_Replace",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_RecalcLLC",
+                "label": "Recalc LLC",
+                "tag": "Recalc_LLC",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_InactivePart",
+                "label": "Check For In-Actives",
+                "tag": "Inactive_Part_Validation",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_DelPart",
+                "label": "Delete Part",
+                "tag": "Delete_Part",
+                "icon": "Delete",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PartsType",
+                "label": "Parts Type",
+                "tag": "PartsType",
+                "icon": "AccessFormDatasheet",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PartChange",
+                "label": "Change Part Numbers",
+                "tag": "Part_Change",
+                "icon": "PictureContrastGallery",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_DivPlanning",
+                "label": "Divisional Planning",
+                "tag": "DivPlanning",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpCapacity",
+            "label": "Capacity",
+            "buttons": [
+              {
+                "key": "button_caWC",
+                "label": "Work Centers",
+                "tag": "Work_Centers",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_caOperations",
+                "label": "Operations",
+                "tag": "Operations",
+                "icon": "CreateFormInDesignView",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_caRoutings",
+                "label": "Routings",
+                "tag": "Routing",
+                "icon": "CreateModule",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_RoutingInq",
+                "label": "Routing Inquiry",
+                "tag": "Look_Routing",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WcWU",
+                "label": "W/C Where-Used",
+                "tag": "WC_WU",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WcList",
+                "label": "W/C List",
+                "tag": "List_Wc",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_RtList",
+                "label": "Routing Listing",
+                "tag": "RoutingListing_Print",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_CopyRouting",
+                "label": "Copy Routing",
+                "tag": "Copy_ Routing",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_WcReplace",
+                "label": "W/C Mass Replace",
+                "tag": "WC_Mass_Replace",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_RtComplete",
+                "label": "Routing Mass Complete",
+                "tag": "MassCompleteRouters",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_RoutingCtrl",
+                "label": "Routing Multipliers",
+                "tag": "Routing_Control",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_DelWC",
+                "label": "Delete W/C",
+                "tag": "Delete_WC",
+                "icon": "Delete",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpECO",
+            "label": "Engineering Change",
+            "buttons": [
+              {
+                "key": "button_EcoMaint",
+                "label": "Entry",
+                "tag": "ECO_Maint",
+                "icon": "PageMenu",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_EcoDisp",
+                "label": "Disposition",
+                "tag": "ECO_Disp",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabSalesAnalysis",
+        "label": "Sales Analysis",
+        "children": [
+          {
+            "key": "grpPF",
+            "label": "Product Family",
+            "buttons": [
+              {
+                "key": "button_pfEntry",
+                "label": "Entry",
+                "tag": "Prod_Fam_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_pfRpt",
+                "label": "List",
+                "tag": "Prod_Fam_Rpt",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_pfSales",
+                "label": "Sales",
+                "tag": "SalesByProdFam",
+                "icon": "FilePrint",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpOpenOrders",
+            "label": "Current Orders",
+            "buttons": [
+              {
+                "key": "button_coBacklog",
+                "label": "Backlog",
+                "tag": "BacklogRpt",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_SalesDetail",
+                "label": "Sales Detail",
+                "tag": "List_SOD",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_OpenSum",
+                "label": "Open Orders Summary",
+                "tag": "OpenSalesOrderSum",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_SalesCur",
+                "label": "Currency",
+                "tag": "SalesByCurrency",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSaCust",
+            "label": "Customers",
+            "buttons": [
+              {
+                "key": "button_SaCustInq",
+                "label": "Inquiry",
+                "tag": "CustSoInq",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_SaCustSum",
+                "label": "Summary",
+                "tag": "Cust_Sum_Sales",
+                "icon": "FileInternetFax",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSaProd",
+            "label": "Parts",
+            "buttons": [
+              {
+                "key": "button_SaProdLast",
+                "label": "Last Sales",
+                "tag": "Sell",
+                "icon": "WatchWindow",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSalesHist",
+            "label": "Sales History",
+            "buttons": [
+              {
+                "key": "button_shCust",
+                "label": "Customer",
+                "tag": "SalesHist_Cust",
+                "icon": "C",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_shPart",
+                "label": "Part",
+                "tag": "SalesHist_Part",
+                "icon": "P",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_shRep",
+                "label": "Rep",
+                "tag": "SalesHist_Rep",
+                "icon": "R",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_shStates",
+                "label": "State",
+                "tag": "SalesHist_State",
+                "icon": "S",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_shTerr",
+                "label": "Territory",
+                "tag": "SalesHist_Terr",
+                "icon": "T",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpSalesUtil",
+            "label": "Utilities",
+            "buttons": [
+              {
+                "key": "button_SaRebuildSa",
+                "label": "Rebuild S/A Table",
+                "tag": "RebuildSaTable",
+                "icon": "ControlToolboxOutlook",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tabControl",
+        "label": "Control",
+        "children": [
+          {
+            "key": "grpAdmin",
+            "label": "Admin",
+            "buttons": [
+              {
+                "key": "button_MCF",
+                "label": "Master Control",
+                "tag": "Mcf_Maint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_NextNum",
+                "label": "Next Numbers",
+                "tag": "Mcf_NN",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_Security",
+                "label": "Security",
+                "tag": "UserSecurity",
+                "icon": "Lock",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_WgAdmin",
+                "label": "Security DB",
+                "tag": "SecurityPassword",
+                "icon": "DatabasePermissionsMenu",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpUser",
+            "label": "User Menus",
+            "buttons": [
+              {
+                "key": "button_UsrMaint",
+                "label": "Maintenance",
+                "tag": "UserMenuMaint",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_UsrSave",
+                "label": "Save",
+                "tag": "UM_Save",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_UsrRestore",
+                "label": "Restore",
+                "tag": "UM_Restore",
+                "icon": "",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              },
+              {
+                "key": "button_UsrFields",
+                "label": "UserFields",
+                "tag": "User_Field_Maint",
+                "icon": "CreateForm",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpArchive",
+            "label": "Table Maintenance",
+            "buttons": [
+              {
+                "key": "button_ArchiveAR",
+                "label": "Accounts Receivable",
+                "tag": "AR_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ArchiveAP",
+                "label": "Accounts Payable",
+                "tag": "AP_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ArchiveGlTran",
+                "label": "G/L Journals",
+                "tag": "GL_Trans_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ArchiveGLT",
+                "label": "G/L Transactions",
+                "tag": "GLT_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ArchiveIT",
+                "label": "Inventory Transactions",
+                "tag": "IT_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_ArchiveSO",
+                "label": "Sales Orders",
+                "tag": "SO_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PurgeAR",
+                "label": "Accounts Receivable",
+                "tag": "AR_Hist_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_PurgeAP",
+                "label": "Accounts Payable",
+                "tag": "AP_Hist_Purge",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "grpYeRolls",
+            "label": "Year-End",
+            "buttons": [
+              {
+                "key": "button_RollCust",
+                "label": "Customer / Ship-To",
+                "tag": "Update_CM",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_RollItem",
+                "label": "Parts",
+                "tag": "Update_IM",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              },
+              {
+                "key": "button_RollVend",
+                "label": "Vendors",
+                "tag": "Update_Ven",
+                "icon": "",
+                "action": [
+                  "ribbon-button"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "PopPartsExcelM",
+            "label": "Export",
+            "buttons": [
+              {
+                "key": "PopParts_ExcelM",
+                "label": "Excel",
+                "tag": "Excel",
+                "icon": "ExportExcel",
+                "action": [
+                  "ribbon-button",
+                  "large"
+                ]
+              }
+            ]
+          }
+        ]
+      }]
