@@ -29,43 +29,16 @@ Line 25 in Mrpplus.xml
 </dropDown>
 <button id="button_ApAgeing" label="Ageing" onAction="CallOnAction" imageMso="FilePrint" tag="AP_Ageing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
 <button id="button_Clearing" label="Clearing" onAction="CallOnAction" imageMso="FilePrint" tag="AP_Clearing" getScreentip="GetScreentip" getSupertip="GetSupertip"/>
-<separator id="APSeparator2"/>```
+<separator id="APSeparator2"/>
 
-Selecting one of these from the combobox
+Selecting one of the items from the combobox/dropDown modifys button state in this group prior to the separator
+
+tag="AP_Ageing" <-- is the form/screen to call. Please have buttons call this is some manner that can be changed later
+
+imageMso="FilePrint" <-- this is an icon hint. matching these exactly is not important so much.
+
+getScreentip="GetScreentip" getSupertip="GetSupertip"   <--- not needed
+
+<separator id="APSeparator2"/>   <!--- not needed as groups have a sperarator already
 ```
-<item id="itmDD1" label="As Of"/>
-<item id="itmDD2" label="Current"/>```
-```
-tag="AP_Ageing" <!-- is the form/screen to call. Please have buttons call this is some manner that can be changed later -->```
-```
-imageMso="FilePrint" <!-- this is an icon hint. matching these exactly is not important so much.```
 
-```xml
-<separator id="APSeparator2"/>   <!--- not needed as groups have a sperarator already -->```
-
-```
- getScreentip="GetScreentip" getSupertip="GetSupertip"   <!--- not needed -->```
-
-
-
-
-
-
--- notes
-Typical setup
-
-ribbon
-  ribbon-tabs
-    ribbon-tab .(header is name / label)
-      ribbon-groups
-        ribbon-group (header is name / label)
-          ribbon-collections
-            ribbon-collection
-              ribbon-items
-                ribbon-item type="Button" :buttonSettings="json-settings"  (:allowedSizes="smallSize, mediumSize, largeSize")
-                  -or-
-                ribbon-item type="SplitButton (dropdown):allowedSizes="largeSize"  :splitButtonSettings="json-settings"
-                  -or-
-                ribbon-item type="DropDown" :dropDownSettings="json-settings"
-
-###End
