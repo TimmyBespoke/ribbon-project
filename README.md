@@ -39,6 +39,6 @@ imageMso="FilePrint" <-- this is an icon hint. matching these exactly is not imp
 
 getScreentip="GetScreentip" getSupertip="GetSupertip"   <--- not needed
 
-<separator id="APSeparator2"/>   <!--- not needed as groups have a sperarator already
+<separator id="APSeparator2"/>   <!--- not needed as groups have a separator already
 ```
 
